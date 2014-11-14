@@ -4,6 +4,9 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
+<?php
+  include './Include.php';
+?>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -22,31 +25,8 @@ and open the template in the editor.
     </head>
     <body>
         <div id="page">
-            <!-- Nav -->
-            <nav class="navbar navbar-default">
-                <section class="container-fluid">
-                    <section class="navbar-header">
-                        <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="./Index.php">WebMarioRama</a>
-                    </section>
-                    <section id="navbarCollapse" class="collapse navbar-collapse">
-                        <ul class="nav navbar-nav">
-                            <li class="active"><a href="./Index.php">Home</a></li>
-                            <li><a href="#">Jeux</a></li>
-                            <li><a href="#">Consoles</a></li> 
-                        </ul>
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                        </ul>
-                    </section>
-                </section>
-            </nav>
+            <!-- Menu -->
+            <?php echo displayNav(); ?>
             
             <!-- Contenu -->
             <section class="container-fluid">
@@ -65,13 +45,9 @@ and open the template in the editor.
                     </section>
                 </section>
             </section>
-            
-            <!-- pied de page -->
-            <footer class="col-sm-12">
-                <section class="panel panel-footer">
-                    <p>CFPT-I Examen M152 2014-2015 Devaud Alan & Geinoz Mathieu</p>
-                </section>
-            </footer>
+
+            <!-- Pied de page -->
+            <?php echo displayFooter(); ?>
         </div>
     </body>
 </html>
