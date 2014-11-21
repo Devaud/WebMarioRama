@@ -40,7 +40,7 @@ ManageNavigation();
                         <h3 class="panel-title">Liste des jeux par tranche de 10 ans</h3>
                     </section>
                     <section class="panel-group panel panel-default" id="accordion" role="tablist" aria-multiselectable="true">
-                       <!-- ----------------- 1981 - 1991 ------------------ -->
+                        <!-- ----------------- 1981 - 1991 ------------------ -->
                         <section class="panel-heading" role="tab" id="headingOne">
                             <h4 class="panel-title">
                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
@@ -55,9 +55,9 @@ ManageNavigation();
                                 <li class="list-group-item">AAA</li> 
                             </ul>
                         </section>
-                       <!-- --------------------- Fin ---------------------- -->
+                        <!-- --------------------- Fin ---------------------- -->
 
-                       <!-- ------------------ 1992 - 2002 ----------------- -->
+                        <!-- ------------------ 1992 - 2002 ----------------- -->
                         <section class="panel-heading" role="tab" id="headingTwo">
                             <h4 class="panel-title">
                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -73,7 +73,7 @@ ManageNavigation();
                             </ul>
                         </section>
                         <!-- --------------------- Fin --------------------- -->
-                        
+
                         <!-- ----------------- 2003 - 2013 ----------------- -->
                         <section class="panel-heading" role="tab" id="headingThree">
                             <h4 class="panel-title">
@@ -90,7 +90,7 @@ ManageNavigation();
                             </ul>
                         </section>
                         <!-- --------------------- Fin --------------------- -->
-                        
+
                         <!-- ----------------  2014 - XXXX ----------------- -->
                         <section class="panel-heading" role="tab" id="headingFour">
                             <h4 class="panel-title">
@@ -109,6 +109,7 @@ ManageNavigation();
                         <!-- --------------------- Fin --------------------- -->
                     </section>
                 </section>
+            </section>
             <!-- ----------------------- Fin Contenu ----------------------- -->
 
             <!-- ----------------------- Pied de page ---------------------- -->
