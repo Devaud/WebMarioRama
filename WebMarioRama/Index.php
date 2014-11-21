@@ -26,7 +26,7 @@ ManageNavigation();
         <title>WebMarioRama</title>
     </head>
     <body>
-        <div id="page">
+        <section id="page">
             <!-- --------------------------- Menu -------------------------- -->
             <?php 
             echo displayNav();
@@ -34,21 +34,24 @@ ManageNavigation();
             <!-- ------------------------- Fin Menu ------------------------ -->
 
             <!-- -------------------------- Contenu ------------------------ -->
-            <section class="container-fluid">
-                <section class="col-sm-12">
-                    <section class="panel panel-default">
-                        <p>bdsmkélvmdslékymvsadvasdvasv
-                            sav
-                            sa
-                            vsavsa</p>
-                        <p>vsav
-                            sadv
-                            as</p>
-                        <p> vsa
-                            vvs
-                            csacsa</p>
+            <section class="col-sm-12 marg">
+                <article class="panel panel-default">
+                    <section class="panel-body">
+                        <p>
+                            Bulbasaur Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ivysaur Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                            Venusaur Lorem ipsum dolor sit amet, consectetur adipiscing elit. Charmander Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                            Charmeleon Lorem ipsum dolor sit amet, consectetur adipiscing elit. Charizard Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                            Squirtle Lorem ipsum dolor sit amet, consectetur adipiscing elit. Wartortle Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                            Blastoise Lorem ipsum dolor sit amet, consectetur adipiscing elit. Caterpie Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        </p>
+                        <p>
+                            Metapod Lorem ipsum dolor sit amet, consectetur adipiscing elit. Butterfree Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                            Weedle Lorem ipsum dolor sit amet, consectetur adipiscing elit. Kakuna Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                            Beedrill Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pidgey Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                            Pidgeotto Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pidgeot Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        </p>
                     </section>
-                </section>
+                </article>
             </section>
             <!-- ----------------------- Fin Contenu ----------------------- -->
 
@@ -57,7 +60,7 @@ ManageNavigation();
             echo displayFooter();
             ?>
             <!-- --------------------- Fin Pied de page -------------------- -->
-        </div>
+        </section>
     </body>
 </html>
 <?php
