@@ -28,13 +28,13 @@ ManageNavigation();
     <body>
         <section id="page" class="col-sm-offset-1 col-sm-10">
             <!-- --------------------------- Menu -------------------------- -->
-            <?php 
+            <?php
             echo displayNav();
             ?>
             <!-- ------------------------- Fin Menu ------------------------ -->
 
             <!-- -------------------------- Contenu ------------------------ -->
-            <section class="col-sm-12 marg">
+            <section class="col-sm-12">
                 <article class="panel panel-default">
                     <section class='panel-heading'>
                         <h3 class='panel-title'>
@@ -42,31 +42,38 @@ ManageNavigation();
                         </h3>
                     </section>
                     <section class="panel-body">
-                        <form action='' method='post'>
-                            <label>Titre :</label>
-                            <input type='text' name='titre' id='titre' placeholder='Mario' required/><br />
-                            <label>Date de sortie :</label>
-                            <input type='date' name='dateSortie' id='dateSortie' required/><br />
-                            <label>Description :</label>
-                            <textarea name='description' id='description' rows="3" cols='20' required></textarea><br />
-                            <label>Type :</label>
-                            <select>
-                                <option value='arcade'>Arcade</option>
-                                <option value='Puzzle'>Puzzle</option>
-                            </select><br />
-                            <label>Plate-formes</label>
-                            <select>
-                                <option value='Nes'>Nes</option>
-                                <option value='WII'>WII</option>
-                            </select><br />
-                        </form>
+
+                        <section class='col-sm-5 col-sm-offset-4'>
+                            <form action='' method='post' role='form' class="form-horizontal">
+                                <section class='form-group'>
+                                    <label>Titre :</label>
+                                    <input type='text' class='form-control' name='titre' id='titre' placeholder='Mario' required/>
+                                    <label>Date de sortie :</label>
+                                    <input type='date' class='form-control' name='dateSortie' id='dateSortie' required/>
+                                    <label>Description :</label>
+                                    <textarea name='description' id='description' class="form-control" rows="3" required></textarea>
+                                    <label>Type :</label>
+                                    <select class="form-control">
+                                        <option value='arcade'>Arcade</option>
+                                        <option value='Puzzle'>Puzzle</option>
+                                    </select>
+                                    <label>Plate-formes</label>
+                                    <select class="form-control">
+                                        <option value='Nes'>Nes</option>
+                                        <option value='WII'>WII</option>
+                                    </select>
+                                </section>
+                            </form>
+                        </section>
+
+
                     </section>
                 </article>
             </section>
             <!-- ----------------------- Fin Contenu ----------------------- -->
 
             <!-- ----------------------- Pied de page ---------------------- -->
-            <?php 
+            <?php
             echo displayFooter();
             ?>
             <!-- --------------------- Fin Pied de page -------------------- -->
