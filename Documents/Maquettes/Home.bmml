@@ -1,0 +1,37 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1272" measuredH="666" mockupW="832" mockupH="653">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="440" y="13" w="832" h="653" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>WebMarioRama%0Ahttp%3A//www.webmariorama.ch</text>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::ButtonBar" x="589" y="106" w="505" h="40" measuredW="190" measuredH="27" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Home%2C%20Jeux%2C%20Consoles</text>
+      </controlProperties>
+    </control>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::Canvas" x="480" y="91" w="749" h="542" measuredW="100" measuredH="70" zOrder="1" locked="false" isInGroup="-1"/>
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::VideoPlayer" x="574" y="248" w="552" h="332" measuredW="300" measuredH="200" zOrder="3" locked="false" isInGroup="-1"/>
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::Paragraph" x="589" y="175" w="505" h="58" measuredW="275" measuredH="80" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>16</size>
+        <text>Bienvenu%20chers%20joueurs%2C%20joueuses%20et%20fans%20de%20la%20serie%20de%20jeux%20Mario%20%21%20Ce%20site%20r%E9pertorie%20tous%20les%20jeux%20dans%20le%20quel%20Mario%20apparait%20ainsi%20que%20les%20consoles%20sur%20les%20quelles%20ces%20jeux%20sont%20disponibles.</text>
+      </controlProperties>
+    </control>
+    <control controlID="12" controlTypeID="__group__" x="509" y="590" w="694" h="28" measuredW="694" measuredH="28" zOrder="5" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="0" w="694" h="28" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="12"/>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="5" y="3" w="-1" h="-1" measuredW="358" measuredH="21" zOrder="1" locked="false" isInGroup="12">
+          <controlProperties>
+            <text>Designed%20and%20Develloped%20by%20Devaud%20Alan%20%26%20Geinoz%20Mathieu%20</text>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::Label" x="564" y="3" w="-1" h="-1" measuredW="126" measuredH="21" zOrder="2" locked="false" isInGroup="12">
+          <controlProperties>
+            <text>CFPT-i%20Examen%20M152</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+  </controls>
+</mockup>
