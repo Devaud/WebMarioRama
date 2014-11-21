@@ -26,38 +26,42 @@ ManageNavigation();
         <title>WebMarioRama</title>
     </head>
     <body>
-        <div id="page">
+        <section id="page" class="col-sm-offset-1 col-sm-10">
             <!-- --------------------------- Menu -------------------------- -->
-            <?php 
+            <?php
             echo displayNav();
             ?>
             <!-- ------------------------- Fin Menu ------------------------ -->
 
             <!-- -------------------------- Contenu ------------------------ -->
-            <section class="container-fluid">
-                <section class="col-sm-12">
-                    <section class="panel panel-default">
-                        <p>bdsmkélvmdslékymvsadvasdvasv
-                            sav
-                            sa
-                            vsavsa</p>
-                        <p>vsav
-                            sadv
-                            as</p>
-                        <p> vsa
-                            vvs
-                            csacsa</p>
+            <section class="col-sm-12 marg">
+                <article class="panel panel-default">
+                    <section class="panel-heading">
+                        <h3 class="panel-title">
+                            Nom du jeu
+                        </h3>
                     </section>
-                </section>
+                    <section class="panel-body">
+
+                        <section class="col-sm-5">
+                            <section class="panel panel-default">
+                                <section class="panel-body">
+                                    <img src="./Img/SMB_POCHETTE.jpg" alt="super mario bross pochette" />
+                                </section>
+                            </section>
+                        </section>
+
+                    </section>
+                </article>
             </section>
             <!-- ----------------------- Fin Contenu ----------------------- -->
 
             <!-- ----------------------- Pied de page ---------------------- -->
-            <?php 
+            <?php
             echo displayFooter();
             ?>
             <!-- --------------------- Fin Pied de page -------------------- -->
-        </div>
+        </section>
     </body>
 </html>
 <?php

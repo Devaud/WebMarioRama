@@ -26,7 +26,7 @@ ManageNavigation();
         <title>WebMarioRama</title>
     </head>
     <body>
-        <section id="page">
+        <section id="page" class="col-sm-offset-1 col-sm-10">
             <!-- --------------------------- Menu -------------------------- -->
             <?php 
             echo displayNav();
