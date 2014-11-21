@@ -42,23 +42,64 @@ ManageNavigation();
                         </h3>
                     </section>
                     <section class="panel-body">
-
-                        <section class="col-sm-5">
+                        <!-- ------------------ Pochette ------------------- -->
+                        <section class="col-sm-4">
                             <article class="panel panel-default">
                                 <section class="panel-body">
                                     <img src="./Img/SMB_POCHETTE.jpg" alt="super mario bross pochette" />
                                 </section>
                             </article>
                         </section>
-                        
-                        <section class="col-sm-7">
+                        <!-- ---------------- Fin Pochette ----------------- -->
+
+                        <!-- ----------------- information ----------------- -->
+                        <section class="col-sm-8">
                             <article class="panel panel-default">
+                                <ul class="list-group">
+                                    <li class="list-group-item">
+                                        Date de sortie : .....
+                                    </li>
+                                    <li class="list-group-item">
+                                        Type : ....
+                                    </li>
+                                    <li class="list-group-item">
+                                        Descriptif : ....
+                                    </li>
+                                </ul>
+                            </article>
+                        </section>
+                        <!-- -------------- Fin information ---------------- -->
+
+                        <!-- ------------------- Video --------------------- -->
+                        <section class="col-sm-4">
+                            <article class="panel panel-default">
+                                <section class="panel-heading">
+                                    Video
+                                </section>
                                 <section class="panel-body">
-                                    
+                                    <video width="100%" controls preload="metadata" poster="./video/SMB/SMB_POSTER.jpg">
+                                        <source src="./video/SMB/SMBGV.mp4" type="video/mp4" />
+                                    </video>
                                 </section>
                             </article>
                         </section>
+                        <!-- ----------------- Fin Video ------------------- -->
 
+                        <!-- ----------------- Plate-formes ---------------- -->
+                        <section class="col-sm-4">
+                            <article class="panel panel-default">
+                                <section class="panel-heading">
+                                    <h3 class="panel-title">
+                                        Plate-formes  
+                                    </h3>
+                                </section>
+                                <section class="list-group">
+                                    <a href="#" class="list-group-item">Nes</a>
+                                </section>
+                            </article>
+                        </section>
+                        <!-- --------------- Fin Plate-formes -------------- -->
+                        
                     </section>
                 </article>
             </section>
