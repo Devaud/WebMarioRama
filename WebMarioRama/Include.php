@@ -100,7 +100,12 @@ function displayNav(){
         $text .= '<li><a href="./Index.php?page=home">Home</a></li>'; 
     }
     
-    $text .= '<li><a href="#">Jeux</a></li>';
+    if($page == 'jeux'){
+        $text .= '<li class="active"><a href="./jeux.php?page=jeux">Jeux</a></li>';
+    }else{
+        $text .= '<li><a href="./jeux.php?page=jeux">Jeux</a></li>';
+    }
+    
     $text .= '<li><a href="#">Consoles</a></li> ';
     $text .= '</ul>';
     $text .= '<ul class="nav navbar-nav navbar-right">';
