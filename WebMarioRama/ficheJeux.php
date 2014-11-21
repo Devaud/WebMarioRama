@@ -44,11 +44,19 @@ ManageNavigation();
                     <section class="panel-body">
 
                         <section class="col-sm-5">
-                            <section class="panel panel-default">
+                            <article class="panel panel-default">
                                 <section class="panel-body">
                                     <img src="./Img/SMB_POCHETTE.jpg" alt="super mario bross pochette" />
                                 </section>
-                            </section>
+                            </article>
+                        </section>
+                        
+                        <section class="col-sm-7">
+                            <article class="panel panel-default">
+                                <section class="panel-body">
+                                    
+                                </section>
+                            </article>
                         </section>
 
                     </section>
