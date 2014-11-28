@@ -10,6 +10,8 @@ session_start();
 
 include './DB/usersdb.php';
 include './DB/typesdb.php';
+include './DB/consolesdb.php';
+include './DB/jeuxdb.php';
 
 /* * **********************************************
  *  **          VARIABLES GLOBALES              ***
@@ -126,7 +128,7 @@ function displayNav() {
         $text .= '<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Jeux  <span class="caret"></span></a>';
         $text .= '<ul class="dropdown-menu" role="menu">';
         $text .= '<li><a href="./jeux.php?page=jeux">Liste jeux</a></li>';
-        $text .= '<li><a href="#">Ajouter un jeu</a></li>';
+        $text .= '<li><a href="./ajoutJeu.php">Ajouter un jeu</a></li>';
         $text .= '</ul>';
         $text .= '</li>';
     }
@@ -160,8 +162,20 @@ function displayOptionType() {
     $arrayType = getAllType();
 
     foreach ($arrayType as $type) {
-        $text .= '<option value="' .$type['NomType'] . '">'.$type['NomType'] .'</option>';
+        $text .= '<option value="' . $type['NomType'] . '" name="'. $type['idType'] .'">' . $type['NomType'] . '</option>';
     }
-    
+
+    return $text;
+}
+
+function displayOptionConsole() {
+    $text = '';
+
+    $arrayConsole = getAllConsole();
+
+    foreach ($arrayConsole as $console) {
+        $text .= '<option value="' . $console['NomConsole'] . '" name="'. $console['idConsole'] .'" >' . $console['NomConsole'] . '</option>';
+    }
+
     return $text;
 }

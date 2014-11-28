@@ -1,26 +1,27 @@
 <?php
 
-/*
+/* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 require_once './DB/connection.php';
 
-function getAllType() {
+function getAllConsole(){
     $bdd = connect();
-    $sql = 'SELECT * From types';
-
+    $sql = 'SELECT * From consoles';
+    
     $st = prepareExecute($sql, $bdd)->FetchAll();
-
+    
     return $st;
 }
 
-function getIdType($nom) {
+function getId($nom){
     $bdd = connect();
-    $sql = 'SELECT idType From types WHERE NomType=:nom';
-
+    $sql = 'SELECT idConsole From consoles WHERE NomConsole=:nom';
+    
     $st = prepareExecute($sql, $bdd, array('nom' => $nom))->Fetch();
-
+    
     return $st;
 }
