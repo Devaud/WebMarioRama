@@ -114,11 +114,22 @@ function displayNav() {
         $text .= '<li><a href="./index.php?page=home">Home</a></li>';
     }
 
-    if ($page == 'jeux') {
-        $text .= '<li class="active"><a href="./jeux.php?page=jeux">Jeux</a></li>';
+    if (!$connect) {
+        if ($page == 'jeux') {
+            $text .= '<li class="active"><a href="./jeux.php?page=jeux">Jeux</a></li>';
+        } else {
+            $text .= '<li><a href="./jeux.php?page=jeux">Jeux</a></li>';
+        }
     } else {
-        $text .= '<li><a href="./jeux.php?page=jeux">Jeux</a></li>';
+        $text .= '<li class="dropdown">';
+        $text .= '<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Jeux  <span class="caret"></span></a>';
+        $text .= '<ul class="dropdown-menu" role="menu">';
+        $text .= '<li><a href="./jeux.php?page=jeux">Liste jeux</a></li>';
+        $text .= '<li><a href="#">Ajouter un jeu</a></li>';
+        $text .= '</ul>';
+        $text .= '</li>';
     }
+
 
     $text .= '<li><a href="#">Consoles</a></li> ';
     $text .= '</ul>';
