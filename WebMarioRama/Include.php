@@ -9,6 +9,7 @@
 session_start();
 
 include './DB/usersdb.php';
+include './DB/typesdb.php';
 
 /* * **********************************************
  *  **          VARIABLES GLOBALES              ***
@@ -150,5 +151,17 @@ function displayNav() {
     $text .= '</section>';
     $text .= '</nav>';
 
+    return $text;
+}
+
+function displayOptionType() {
+    $text = '';
+
+    $arrayType = getAllType();
+
+    foreach ($arrayType as $type) {
+        $text .= '<option value="' .$type['NomType'] . '">'.$type['NomType'] .'</option>';
+    }
+    
     return $text;
 }

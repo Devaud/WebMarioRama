@@ -54,8 +54,9 @@ ManageNavigation();
                                     <textarea name='description' id='description' class="form-control" rows="3" required></textarea>
                                     <label>Type :</label>
                                     <select class="form-control">
-                                        <option value='arcade'>Arcade</option>
-                                        <option value='Puzzle'>Puzzle</option>
+                                        <?php
+                                        echo displayOptionType();
+                                        ?>
                                     </select>
                                     <label>Plate-formes</label>
                                     <select class="form-control">
