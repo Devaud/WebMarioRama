@@ -8,6 +8,12 @@ and open the template in the editor.
 include './Include.php';
 LoadFromSession();
 ManageNavigation();
+
+if(isset($_GET['id'])){
+    $id = $_GET['id'];
+    
+    $jeu = getGame($id);
+}
 ?>
 <html>
     <head>
@@ -38,7 +44,9 @@ ManageNavigation();
                 <article class="panel panel-default">
                     <section class="panel-heading">
                         <h3 class="panel-title">
-                            Nom du jeu
+                            <?php
+                            echo $jeu['NomJeu'];
+                            ?>
                         </h3>
                     </section>
                     <section class="panel-body">
@@ -57,7 +65,7 @@ ManageNavigation();
                             <article class="panel panel-default">
                                 <ul class="list-group">
                                     <li class="list-group-item">
-                                        Date de sortie : .....
+                                        Date de sortie : <?php echo $jeu['dateJeu']; ?>
                                     </li>
                                     <li class="list-group-item">
                                         Type : ....

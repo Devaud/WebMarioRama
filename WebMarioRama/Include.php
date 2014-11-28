@@ -128,7 +128,7 @@ function displayNav() {
         $text .= '<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Jeux  <span class="caret"></span></a>';
         $text .= '<ul class="dropdown-menu" role="menu">';
         $text .= '<li><a href="./jeux.php?page=jeux">Liste jeux</a></li>';
-        $text .= '<li><a href="./ajoutJeu.php">Ajouter un jeu</a></li>';
+        $text .= '<li><a href="./ajoutJeu.php?page=ajoutJeu">Ajouter un jeu</a></li>';
         $text .= '</ul>';
         $text .= '</li>';
     }

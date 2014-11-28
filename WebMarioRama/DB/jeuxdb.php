@@ -31,3 +31,12 @@ function jeuType($idJeu, $idType){
 
     prepareExecute($sql, $bdd, array('idType' => $idType, 'idJeu' => $idJeu));
 }
+
+function getGame($id){
+    $bdd = connect();
+    $sql = 'SELECT * FROM jeux WHERE NomJeu=:nom';
+    
+    $st = prepareExecute($sql, $bdd, array('nom' => $id))->Fetch();
+    
+    return $st;
+}

@@ -9,6 +9,10 @@ include './Include.php';
 LoadFromSession();
 ManageNavigation();
 
+if(!$connect){
+    header('location: ./index.php?page=home');
+}
+
 $console = '';
 $erreur = '';
 
@@ -41,25 +45,26 @@ if (isset($_POST['submit'])) {
     } else {
         $type = NULL;
     }
-    
+
     $id = addGame($titre, $date, $desc, $video, $img);
     $idConsole = getId($console);
     jeuConsole($id, $idConsole['idConsole']);
-    
-    if($type != NULL){
+
+    if ($type != NULL) {
         $idType = getIdType($type);
         jeuType($id, $idType['idType']);
     }
     
+    header('location: ./ficheJeux.php?page=ficheJeu&id='. $id);
 }
 ?>
 <html>
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./css/Normalize.css"
-              <!-- Fichier pour bootstrap -->
-              <link rel="stylesheet" href="./css/bootstrap.min.css">
+        <link rel="stylesheet" href="./css/Normalize.css" />
+        <!-- Fichier pour bootstrap -->
+        <link rel="stylesheet" href="./css/bootstrap.min.css">
         <link rel="stylesheet" href="./css/bootstrap-theme.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="./js/bootstrap.min.js"></script>
