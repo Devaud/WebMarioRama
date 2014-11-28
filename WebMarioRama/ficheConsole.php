@@ -48,25 +48,25 @@ ManageNavigation();
                                 <section class="panel-body">
                                     <img src="./Img/N64.png" alt="Nintendo 64"/>
                                 </section>
-                                <div class="row">
-                                    <div class="col-xs-4 col-md-3">
+                                <section class="row">
+                                    <section class="col-xs-4 col-md-3">
                                         <a href="#" class="thumbnail">
                                             <img src="./Img/N64.png" alt="test">
                                         </a>                                    
-                                    </div>
-                                    <div class="col-xs-4 col-md-3">
+                                    </section>
+                                    <section class="col-xs-4 col-md-3">
                                         <a href="#" class="thumbnail">
                                             <img src="./Img/N64.png" alt="test">
                                         </a>
                                         
-                                    </div>
-                                    <div class="col-xs-4 col-md-3">
+                                    </section>
+                                    <section class="col-xs-4 col-md-3">
                                         <a href="#" class="thumbnail">
                                             <img src="./Img/N64.png" alt="test">
                                         </a>
                                         
-                                    </div>
-                                </div></article>
+                                    </section>
+                                </section></article>
 
                         </section>
                         <!-- ---------------- Fin Pochette ----------------- -->
