@@ -9,7 +9,7 @@ include './Include.php';
 LoadFromSession();
 ManageNavigation();
 
-if(!$connect){
+if (!$connect) {
     header('location: ./index.php?page=home');
 }
 
@@ -17,12 +17,16 @@ $console = '';
 $erreur = '';
 
 if (isset($_POST['submit'])) {
+    // Initialisation des variable
     $titre = strip_tags(trim($_POST['titre']));
     $date = $_POST['dateSortie'];
     $console = $_POST['console'];
     $video = NULL;
     $img = NULL;
+    $type = NULL;
+    $desc = NULL;
 
+    // Test l'existance de la date et la met au bon format
     if (empty($date)) {
         $date = NULL;
     } else {
@@ -34,28 +38,51 @@ if (isset($_POST['submit'])) {
         }
     }
 
+    // Récupère la description si existante
     if (!empty($_POST['description'])) {
         $desc = strip_tags(trim($_POST['description']));
     } else {
         $desc = NULL;
     }
 
+    // Récupère le type de jeu
     if (!empty($_POST['type'])) {
         $type = $_POST['type'];
     } else {
         $type = NULL;
     }
 
-    $id = addGame($titre, $date, $desc, $video, $img);
-    $idConsole = getId($console);
-    jeuConsole($id, $idConsole['idConsole']);
+    // Traitement de l'image uploader
+    if (!empty($_FILES['file']['name'])) {
+        // Information de l'image
+        $chemin_tmp = $_FILES['file']['tmp_name'];
+        $pathinfo = pathinfo($_FILES['file']['name']);
+        $extension = $pathinfo['extension'];
+
+        //Test si le dossier du jeux exist pas. S'il n'exist pas le dossier est créé.
+        $dossier = './Media/' . str_replace(' ', '', $titre);
+        if (!file_exists($dossier)) {
+            mkdir($dossier);
+        }
+
+        // Initialisation du chemin avec le nom de l'image et son extension
+        $cheminImage = $dossier . '/' . str_replace(' ', '', $titre) . '_POCHETTE.' . $extension;
+        move_uploaded_file($chemin_tmp, $cheminImage); // Upload l'image
+        $img = $cheminImage;
+    }
+
+    // Traitement avec la base de données
+    $id = addGame($titre, $date, $desc, $video, $img); // Ajout des informations concernant le jeu
+    $idConsole = getId($console); // Récupère l'id de la console
+    jeuConsole($id, $idConsole['idConsole']); // Associe le jeu à la console
 
     if ($type != NULL) {
-        $idType = getIdType($type);
-        jeuType($id, $idType['idType']);
+        $idType = getIdType($type); // Récupère l'id du type du jeu
+        jeuType($id, $idType['idType']); // Associe le jeu avec le type
     }
-    
-    header('location: ./ficheJeux.php?page=ficheJeu&id='. $id);
+
+    // Redirige sur la page du jeu
+    header('location: ./ficheJeux.php?page=ficheJeu&id=' . $id); 
 }
 ?>
 <html>
@@ -93,7 +120,7 @@ if (isset($_POST['submit'])) {
                     <section class="panel-body">
 
                         <section class='col-sm-5 col-sm-offset-4'>
-                            <form action='./ajoutJeu.php' method='post' role='form' class="form-horizontal">
+                            <form action='./ajoutJeu.php' method='post' role='form' class="form-horizontal" enctype="multipart/form-data">
                                 <section class='form-group'>
                                     <label>Titre :</label>
                                     <input type='text' class='form-control' name='titre' id='titre' placeholder='Mario' required/>
@@ -113,6 +140,9 @@ if (isset($_POST['submit'])) {
                                         echo displayOptionConsole();
                                         ?>
                                     </select>
+                                    <label  for="picture">Pochette du jeu :</label>
+                                    <input type="file" name="file" id="picture" required/>
+
                                     <input type="submit" name="submit" value="Valider" class="btn btn-default"/>
                                 </section>
                             </form>

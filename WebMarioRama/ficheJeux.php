@@ -54,7 +54,7 @@ if(isset($_GET['id'])){
                         <section class="col-sm-4">
                             <article class="panel panel-default">
                                 <section class="panel-body">
-                                    <img src="./Img/SMB_POCHETTE.jpg" alt="super mario bross pochette" />
+                                    <img src="Media/SMB_POCHETTE.jpg" alt="super mario bross pochette" />
                                 </section>
                             </article>
                         </section>
