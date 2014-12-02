@@ -34,9 +34,9 @@ function jeuType($idJeu, $idType){
 
 function getGame($id){
     $bdd = connect();
-    $sql = 'SELECT * FROM jeux WHERE NomJeu=:nom';
+    $sql = 'SELECT * FROM jeux WHERE idJeu=:id';
     
-    $st = prepareExecute($sql, $bdd, array('nom' => $id))->Fetch();
+    $st = prepareExecute($sql, $bdd, array('id' => $id))->Fetch();
     
     return $st;
 }

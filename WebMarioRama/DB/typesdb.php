@@ -24,3 +24,15 @@ function getIdType($nom) {
 
     return $st;
 }
+
+function getTypeById($id){
+    $bdd = connect();
+    $sql = 'SELECT idType From etre WHERE idJeu=:id';
+
+    $idType = prepareExecute($sql, $bdd, array('id' => $id))->Fetch();
+
+    $sql = 'SELECT NomType FROM types WHERE idType=:idType';
+    $st = prepareExecute($sql, $bdd, array('idType' => $idType['idType']))->Fetch();
+    return $st;
+}
+    

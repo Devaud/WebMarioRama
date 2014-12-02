@@ -60,8 +60,8 @@ ManageNavigation();
                         <section class="caption">
                             <h3>Nintendo 64</h3>                                          
                         </section>
-                        <a href="#" class="thumbnail">
-                            <img src="./Img/N64.png" alt="...">
+                        <a href="#">
+                            <img src="./Media/SMB_POCHETTE.jpg" alt="..." class="img-responsive img-rounded">
                         </a>                        
                     </section>                 
                 </section>
@@ -70,8 +70,18 @@ ManageNavigation();
                         <section class="caption">
                             <h3>Nintendo 64</h3>                                          
                         </section>
-                        <a href="#" class="thumbnail">
-                            <img src="./Img/N64.png" alt="...">
+                        <a href="#">
+                            <img src="./Media/SMB_POCHETTE.jpg" alt="..." class="img-responsive img-rounded">
+                        </a>                         
+                    </section>     
+                </section>
+                <section class="col-sm-4 col-md-3">
+                    <section class="thumbnail">
+                        <section class="caption">
+                            <h3>Nintendo 64</h3>                                          
+                        </section>
+                        <a href="#">
+                            <img src="./Media/SMB_POCHETTE.jpg" alt="..." class="img-responsive img-rounded">
                         </a>                        
                     </section>     
                 </section>
@@ -80,18 +90,8 @@ ManageNavigation();
                         <section class="caption">
                             <h3>Nintendo 64</h3>                                          
                         </section>
-                        <a href="#" class="thumbnail">
-                            <img src="./Img/N64.png" alt="...">
-                        </a>                        
-                    </section>     
-                </section>
-                <section class="col-sm-4 col-md-3">
-                    <section class="thumbnail">
-                        <section class="caption">
-                            <h3>Nintendo 64</h3>                                          
-                        </section>
-                        <a href="#" class="thumbnail">
-                            <img src="./Img/N64.png" alt="...">
+                        <a href="#">
+                            <img src="./Media/SMB_POCHETTE.jpg" alt="..." class="img-responsive img-rounded">
                         </a>                        
                     </section>     
                 </section>

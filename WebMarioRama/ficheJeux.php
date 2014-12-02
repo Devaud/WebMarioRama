@@ -9,10 +9,24 @@ include './Include.php';
 LoadFromSession();
 ManageNavigation();
 
-if(isset($_GET['id'])){
+if (isset($_GET['id'])) {
     $id = $_GET['id'];
-    
+
     $jeu = getGame($id);
+
+    $idJeu = $jeu['idJeu'];
+    $type = getTypeById($jeu['idJeu']);
+    $pochette = $jeu['ImgJeu'];
+    $nomJeux = $jeu['NomJeu'];
+    $descr = $jeu['Descriptif'];
+    $date = $jeu['DateJeu'];
+    $video = $jeu['Video'];
+    $videoNULL = false;
+    
+    if($video == ''){
+        $videoNULL = true;
+        $video = 'pas de video disponible';
+    }
 }
 ?>
 <html>
@@ -45,18 +59,14 @@ if(isset($_GET['id'])){
                     <section class="panel-heading">
                         <h3 class="panel-title">
                             <?php
-                            echo $jeu['NomJeu'];
+                            echo $nomJeux;
                             ?>
                         </h3>
                     </section>
                     <section class="panel-body">
                         <!-- ------------------ Pochette ------------------- -->
                         <section class="col-sm-4">
-                            <article class="panel panel-default">
-                                <section class="panel-body">
-                                    <img src="Media/SMB_POCHETTE.jpg" alt="super mario bross pochette" />
-                                </section>
-                            </article>
+                            <img src="<?php echo $pochette; ?>" alt="<?php echo $nomJeux . ' pochette' ?>" class="img-responsive img-rounded"/>
                         </section>
                         <!-- ---------------- Fin Pochette ----------------- -->
 
@@ -65,13 +75,13 @@ if(isset($_GET['id'])){
                             <article class="panel panel-default">
                                 <ul class="list-group">
                                     <li class="list-group-item">
-                                        Date de sortie : <?php echo $jeu['dateJeu']; ?>
+                                        Date de sortie : <?php echo $date; ?>
                                     </li>
                                     <li class="list-group-item">
-                                        Type : ....
+                                        Type : <?php echo $type['NomType']; ?>
                                     </li>
                                     <li class="list-group-item">
-                                        Descriptif : ....
+                                        Descriptif : <br /> <?php echo $descr; ?>
                                     </li>
                                 </ul>
                             </article>
@@ -85,9 +95,15 @@ if(isset($_GET['id'])){
                                     Video
                                 </section>
                                 <section class="panel-body">
-                                    <video width="100%" controls preload="metadata" poster="./video/SMB/SMB_POSTER.jpg">
-                                        <source src="./video/SMB/SMBGV.mp4" type="video/mp4" />
-                                    </video>
+                                    
+                                    <?php 
+                                        if($videoNULL){
+                                            echo $video;
+                                        }else{
+                                            echo displayVideo($video);
+                                        }
+                                    ?>
+                                    
                                 </section>
                             </article>
                         </section>
@@ -102,12 +118,12 @@ if(isset($_GET['id'])){
                                     </h3>
                                 </section>
                                 <section class="list-group">
-                                    <a href="#" class="list-group-item">Nes</a>
+                                    <?php echo displayPlateformes($idJeu); ?>
                                 </section>
                             </article>
                         </section>
                         <!-- --------------- Fin Plate-formes -------------- -->
-                        
+
                     </section>
                 </article>
             </section>

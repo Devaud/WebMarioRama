@@ -134,7 +134,12 @@ function displayNav() {
     }
 
 
-    $text .= '<li><a href="#">Consoles</a></li> ';
+    if ($page == 'consoles') {
+        $text .= '<li class="active" ><a href="./Consoles.php?page=consoles">Consoles</a></li> ';
+    } else {
+        $text .= '<li><a href="./Consoles.php?page=consoles">Consoles</a></li> ';
+    }
+
     $text .= '</ul>';
     $text .= '<ul class="nav navbar-nav navbar-right">';
     if ($connect) {
@@ -162,7 +167,7 @@ function displayOptionType() {
     $arrayType = getAllType();
 
     foreach ($arrayType as $type) {
-        $text .= '<option value="' . $type['NomType'] . '" name="'. $type['idType'] .'">' . $type['NomType'] . '</option>';
+        $text .= '<option value="' . $type['NomType'] . '" name="' . $type['idType'] . '">' . $type['NomType'] . '</option>';
     }
 
     return $text;
@@ -174,8 +179,29 @@ function displayOptionConsole() {
     $arrayConsole = getAllConsole();
 
     foreach ($arrayConsole as $console) {
-        $text .= '<option value="' . $console['NomConsole'] . '" name="'. $console['idConsole'] .'" >' . $console['NomConsole'] . '</option>';
+        $text .= '<option value="' . $console['NomConsole'] . '" name="' . $console['idConsole'] . '" >' . $console['NomConsole'] . '</option>';
     }
+
+    return $text;
+}
+
+function displayPlateformes($id) {
+    $arrayPlateformes = getNameById($id);
+    $text = '';
+
+    for ($i = 0; count($arrayPlateformes) > $i; $i++) {
+        $idConsole = getId($arrayPlateformes[$i]);
+        $text .= '<a href = "./ficheConsole.php?page=ficheConsole&id=' . $idConsole['idConsole'] . '" class = "list-group-item">' . $arrayPlateformes[$i] . '</a>';
+    }
+
+    return $text;
+}
+
+function displayVideo($link, $poster = './Media/mario_poster_default.jpeg') {
+    $text = '';
+    $text .= '<video width="100%" controls preload="metadata" poster="' . $poster . '">
+                                        <source src="' . $link . '" type="video/mp4" />
+                                    </video>';
 
     return $text;
 }
