@@ -22,11 +22,18 @@ if (isset($_GET['id'])) {
     $date = $jeu['DateJeu'];
     $video = $jeu['Video'];
     $videoNULL = false;
-    
-    if($video == ''){
+
+    if ($video == '') {
         $videoNULL = true;
         $video = 'pas de video disponible';
     }
+}
+
+if (isset($_POST['submit'])) {
+    $console = $_POST['console'];
+    
+    $idConsole = getId($console); // Récupère l'id de la console
+    jeuConsole($id, $idConsole['idConsole']); // Associe le jeu à la console
 }
 ?>
 <html>
@@ -95,15 +102,15 @@ if (isset($_GET['id'])) {
                                     Video
                                 </section>
                                 <section class="panel-body">
-                                    
-                                    <?php 
-                                        if($videoNULL){
-                                            echo $video;
-                                        }else{
-                                            echo displayVideo($video);
-                                        }
+
+                                    <?php
+                                    if ($videoNULL) {
+                                        echo $video;
+                                    } else {
+                                        echo displayVideo($video);
+                                    }
                                     ?>
-                                    
+
                                 </section>
                             </article>
                         </section>
@@ -119,6 +126,23 @@ if (isset($_GET['id'])) {
                                 </section>
                                 <section class="list-group">
                                     <?php echo displayPlateformes($idJeu); ?>
+                                    <section class='list-group-item'>
+                                        <form method='POST' action='./ficheJeux.php?page=figheJeu&id=<?php echo $id; ?>' class='form-horizontal'>
+                                            <section class='form-group col-sm-offset-12'>
+                                                <section class='col-sm-7'>
+                                                    <select class="form-control" name="console">
+                                                        <?php
+                                                        echo displayOptionConsole();
+                                                        ?>
+                                                    </select>
+                                                </section>
+                                                <section class='col-sm-3'>
+                                                    <input type="submit" id="submit" class="btn btn-default" name="submit" value="Ajouter" />
+                                                </section>
+
+                                            </section>
+                                        </form>
+                                    </section>
                                 </section>
                             </article>
                         </section>

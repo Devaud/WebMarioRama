@@ -163,7 +163,7 @@ if (isset($_POST['submit'])) {
                                     <input type="file" name="file" id="picture" required/>
                                     
                                     <label  for="video">Video (Trailer) :</label>
-                                    <input type="file" name="video" id="video" required/>
+                                    <input type="file" name="video" id="video" />
 
                                     <input type="submit" name="submit" value="Valider" class="btn btn-default"/>
                                 </section>
