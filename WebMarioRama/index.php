@@ -28,7 +28,7 @@ ManageNavigation();
     <body>
         <section id="page" class="col-sm-offset-1 col-sm-10">
             <!-- --------------------------- Menu -------------------------- -->
-            <?php 
+            <?php
             echo displayNav();
             ?>
             <!-- ------------------------- Fin Menu ------------------------ -->
@@ -37,6 +37,9 @@ ManageNavigation();
             <section class="col-sm-12 marg">
                 <article class="panel panel-default">
                     <section class="panel-body">
+                        <h1 align='center'>
+                            Introduction
+                        </h1>
                         <p>
                             Bulbasaur Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ivysaur Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                             Venusaur Lorem ipsum dolor sit amet, consectetur adipiscing elit. Charmander Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
@@ -44,19 +47,26 @@ ManageNavigation();
                             Squirtle Lorem ipsum dolor sit amet, consectetur adipiscing elit. Wartortle Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                             Blastoise Lorem ipsum dolor sit amet, consectetur adipiscing elit. Caterpie Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                         </p>
-                        <p>
-                            Metapod Lorem ipsum dolor sit amet, consectetur adipiscing elit. Butterfree Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                            Weedle Lorem ipsum dolor sit amet, consectetur adipiscing elit. Kakuna Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                            Beedrill Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pidgey Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                            Pidgeotto Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pidgeot Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        <h3>
+                            Evolution des jeux Mario :
+                        </h3>
+                        <p align='center'>
+                            <img src='./Media/evolution-mario.jpg' src='evolution jeux mario' width='100%'/>
                         </p>
+                        
+                        <h3>
+                            Vidéo de l'évolution des consoles de nintendo :
+                        </h3>
+                        <video width="100%" controls preload="metadata" poster="./Media/Poster.jpg">
+                            <source src="./Media/EvolutionConsoles.mp4" type="video/mp4" />
+                        </video>
                     </section>
                 </article>
             </section>
             <!-- ----------------------- Fin Contenu ----------------------- -->
 
             <!-- ----------------------- Pied de page ---------------------- -->
-            <?php 
+            <?php
             echo displayFooter();
             ?>
             <!-- --------------------- Fin Pied de page -------------------- -->

@@ -206,14 +206,36 @@ function displayVideo($link, $poster = './Media/mario_poster_default.jpeg') {
     return $text;
 }
 
-function displayListeJeux($dateDebut, $dateFin){
+function displayListeJeux($dateDebut, $dateFin) {
     $text = '';
-    
+
     $arrayJeux = getAllGameBetweenTwoDate($dateDebut, $dateFin);
-    
-    foreach($arrayJeux as $jeux){
-        $text .= '<a class="list-group-item" href="./ficheJeux.php?page=figheJeu&id='. $jeux['idJeu'].'" >'. $jeux['NomJeu'] . '</a>';
+
+    foreach ($arrayJeux as $jeux) {
+        $text .= '<a class="list-group-item" href="./ficheJeux.php?page=figheJeu&id=' . $jeux['idJeu'] . '" >' . $jeux['NomJeu'] . '</a>';
     }
-    
+
+    return $text;
+}
+
+function displayAjout($id) {
+
+    $text = '';
+
+    $text .='<section class=\'list-group-item\'>';
+    $text .= '<form method=\'POST\' action=\'./ficheJeux.php?page=figheJeu&id=' .$id. '\' class=\'form-horizontal\'>';
+    $text .= '<section class=\'form-group col-sm-offset-12\'>';
+    $text .= '<section class=\'col-sm-7\'>';
+    $text .= '<select class="form-control" name="console">';
+    $text .= displayOptionConsole();
+    $text .= '</select>';
+    $text .= '</section>';
+    $text .= '<section class=\'col-sm-3\'>';
+    $text .= '<input type="submit" id="submit" class="btn btn-default" name="submit" value="Ajouter" />';
+    $text .= '</section>';
+    $text .= '</section>';
+    $text .= '</form>';
+    $text .= '</section>';
+
     return $text;
 }

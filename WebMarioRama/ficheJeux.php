@@ -126,23 +126,11 @@ if (isset($_POST['submit'])) {
                                 </section>
                                 <section class="list-group">
                                     <?php echo displayPlateformes($idJeu); ?>
-                                    <section class='list-group-item'>
-                                        <form method='POST' action='./ficheJeux.php?page=figheJeu&id=<?php echo $id; ?>' class='form-horizontal'>
-                                            <section class='form-group col-sm-offset-12'>
-                                                <section class='col-sm-7'>
-                                                    <select class="form-control" name="console">
-                                                        <?php
-                                                        echo displayOptionConsole();
-                                                        ?>
-                                                    </select>
-                                                </section>
-                                                <section class='col-sm-3'>
-                                                    <input type="submit" id="submit" class="btn btn-default" name="submit" value="Ajouter" />
-                                                </section>
-
-                                            </section>
-                                        </form>
-                                    </section>
+                                    <?php
+                                    if($connect){
+                                        echo displayAjout($idJeu);
+                                    }
+                                    ?>
                                 </section>
                             </article>
                         </section>
