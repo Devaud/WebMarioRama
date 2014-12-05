@@ -49,11 +49,9 @@ ManageNavigation();
                             </h4>
                         </section>
                         <section id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-                            <ul class="list-group">
-                                <li class="list-group-item">XXX</li>
-                                <li class="list-group-item">YYY</li>
-                                <li class="list-group-item">AAA</li> 
-                            </ul>
+                            <section class="list-group">
+                                <?php echo displayListeJeux('1981', '1991'); ?>
+                            </section>
                         </section>
                         <!-- --------------------- Fin ---------------------- -->
 
@@ -67,9 +65,7 @@ ManageNavigation();
                         </section>
                         <section id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                             <ul class="list-group">
-                                <li class="list-group-item">XXX</li>
-                                <li class="list-group-item">YYY</li>
-                                <li class="list-group-item">AAA</li> 
+                                <?php echo displayListeJeux('1992', '2002'); ?>
                             </ul>
                         </section>
                         <!-- --------------------- Fin --------------------- -->
@@ -84,9 +80,7 @@ ManageNavigation();
                         </section>
                         <section id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                             <ul class="list-group">
-                                <li class="list-group-item">XXX</li>
-                                <li class="list-group-item">YYY</li>
-                                <li class="list-group-item">AAA</li> 
+                                <?php echo displayListeJeux('2003', '2013'); ?>
                             </ul>
                         </section>
                         <!-- --------------------- Fin --------------------- -->
@@ -101,9 +95,7 @@ ManageNavigation();
                         </section>
                         <section id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
                             <ul class="list-group">
-                                <li class="list-group-item">XXX</li>
-                                <li class="list-group-item">YYY</li>
-                                <li class="list-group-item">AAA</li> 
+                                <?php echo displayListeJeux('2014', '2015'); ?>
                             </ul>
                         </section>
                         <!-- --------------------- Fin --------------------- -->

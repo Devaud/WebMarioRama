@@ -205,3 +205,15 @@ function displayVideo($link, $poster = './Media/mario_poster_default.jpeg') {
 
     return $text;
 }
+
+function displayListeJeux($dateDebut, $dateFin){
+    $text = '';
+    
+    $arrayJeux = getAllGameBetweenTwoDate($dateDebut, $dateFin);
+    
+    foreach($arrayJeux as $jeux){
+        $text .= '<a class="list-group-item" href="./ficheJeux.php?page=figheJeu&id='. $jeux['idJeu'].'" >'. $jeux['NomJeu'] . '</a>';
+    }
+    
+    return $text;
+}

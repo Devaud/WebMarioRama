@@ -25,18 +25,27 @@ function jeuConsole($idJeu, $idConsole) {
     prepareExecute($sql, $bdd, array('idConsole' => $idConsole, 'idJeu' => $idJeu));
 }
 
-function jeuType($idJeu, $idType){
+function jeuType($idJeu, $idType) {
     $bdd = connect();
     $sql = 'INSERT INTO etre(idJeu, idType) VALUES (:idJeu, :idType)';
 
     prepareExecute($sql, $bdd, array('idType' => $idType, 'idJeu' => $idJeu));
 }
 
-function getGame($id){
+function getGame($id) {
     $bdd = connect();
     $sql = 'SELECT * FROM jeux WHERE idJeu=:id';
-    
+
     $st = prepareExecute($sql, $bdd, array('id' => $id))->Fetch();
-    
+
+    return $st;
+}
+
+function getAllGameBetweenTwoDate($dateDebut, $dateFin) {
+    $bdd = connect();
+    $sql = 'SELECT * FROM jeux WHERE DateJeu > :dateDebut AND DateJeu < :dateFin';
+
+    $st = prepareExecute($sql, $bdd, array('dateDebut' => $dateDebut, 'dateFin' => $dateFin + 1))->FetchAll();
+
     return $st;
 }
