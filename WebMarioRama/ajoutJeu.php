@@ -70,6 +70,25 @@ if (isset($_POST['submit'])) {
         move_uploaded_file($chemin_tmp, $cheminImage); // Upload l'image
         $img = $cheminImage;
     }
+    
+    // Traitement de la vidéo uploader
+    if (!empty($_FILES['video']['name'])) {
+        // Information de la video
+        $chemin_tmp_video = $_FILES['video']['tmp_name'];
+        $pathinfo = pathinfo($_FILES['video']['name']);
+        $extension = $pathinfo['extension'];
+
+        //Test si le dossier du jeux exist pas. S'il n'exist pas le dossier est créé.
+        $dossier = './Media/' . str_replace(' ', '', $titre);
+        if (!file_exists($dossier)) {
+            mkdir($dossier);
+        }
+
+        // Initialisation du chemin avec le nom de la vidéo et son extension
+        $cheminVideo = $dossier . '/' . str_replace(' ', '', $titre) . '_VIDEO.' . $extension;
+        move_uploaded_file($chemin_tmp_video, $cheminVideo); // Upload l'image
+        $video = $cheminVideo;
+    }
 
     // Traitement avec la base de données
     $id = addGame($titre, $date, $desc, $video, $img); // Ajout des informations concernant le jeu
@@ -142,6 +161,9 @@ if (isset($_POST['submit'])) {
                                     </select>
                                     <label  for="picture">Pochette du jeu :</label>
                                     <input type="file" name="file" id="picture" required/>
+                                    
+                                    <label  for="video">Video (Trailer) :</label>
+                                    <input type="file" name="video" id="video" required/>
 
                                     <input type="submit" name="submit" value="Valider" class="btn btn-default"/>
                                 </section>
