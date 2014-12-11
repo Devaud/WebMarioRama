@@ -19,9 +19,11 @@ ManageNavigation();
         <link rel="stylesheet" href="./css/bootstrap-theme.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="./js/bootstrap.min.js"></script>
-
+        <script src="./js/music.js" ></script>
+        
         <!-- Fichier créer par nous -->
         <link rel="stylesheet" href="./css/style.css">
+        
 
         <title>WebMarioRama</title>
     </head>
@@ -53,7 +55,7 @@ ManageNavigation();
                         <p align='center'>
                             <img src='./Media/evolution-mario.jpg' src='evolution jeux mario' width='100%'/>
                         </p>
-                        
+
                         <h3>
                             Vidéo de l'évolution des consoles de nintendo :
                         </h3>

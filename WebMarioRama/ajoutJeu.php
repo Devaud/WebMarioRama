@@ -114,6 +114,7 @@ if (isset($_POST['submit'])) {
         <link rel="stylesheet" href="./css/bootstrap-theme.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="./js/bootstrap.min.js"></script>
+        <script src="./js/music.js" ></script>
 
         <!-- Fichier créer par nous -->
         <link rel="stylesheet" href="./css/style.css">

@@ -141,7 +141,9 @@ function displayNav() {
     }
 
     $text .= '</ul>';
+    
     $text .= '<ul class="nav navbar-nav navbar-right">';
+    $text .= '<li><button onclick="mute()" class="btn btn-default "><span class="glyphicon glyphicon-volume-up" id="volume"></span></button><audio autoplay="autoplay" loop="loop" id="player"><source src="./Media/soundtrack.mp3" type="audio/mpeg" />Your browser does not support the audio element.</audio></li>';
     if ($connect) {
         $text .= '<li><a href="./logout.php"><span class="glyphicon glyphicon-log-out"></span> logout</a></li>';
     } else {
