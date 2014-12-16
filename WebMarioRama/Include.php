@@ -204,7 +204,19 @@ function displayPlateformes($id) {
 
     for ($i = 0; count($arrayPlateformes) > $i; $i++) {
         $idConsole = getId($arrayPlateformes[$i]);
-        $text .= '<a href = "./ficheConsole.php?page=ficheConsole&id=' . $idConsole['idConsole'] . '" class = "list-group-item">' . $arrayPlateformes[$i] . '</a>';
+        $text .= '<a href = "./ficheConsole.php?page=ficheConsole&console=' . $idConsole['idConsole'] . '" class = "list-group-item">' . $arrayPlateformes[$i] . '</a>';
+    }
+
+    return $text;
+}
+
+function displayJeux($id) {
+    $arrayPlateformes = getJeuxById($id);
+    $text = '';
+
+    for ($i = 0; count($arrayPlateformes) > $i; $i++) {
+        $idJeu = getIdJeu($arrayPlateformes[$i]);
+        $text .= '<a href = "./ficheJeux.php?page=ficheJeux&id=' . $idJeu . '" class = "list-group-item">' . $arrayPlateformes[$i] . '</a>';
     }
 
     return $text;

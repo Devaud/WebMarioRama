@@ -8,6 +8,11 @@ and open the template in the editor.
 include './Include.php';
 LoadFromSession();
 ManageNavigation();
+
+if (isset($_GET['console'])) {
+    $idConsole = $_GET['console'];
+    $console = getConsole($idConsole);
+}
 ?>
 <html>
     <head>
@@ -39,36 +44,13 @@ ManageNavigation();
                 <article class="panel panel-default">
                     <section class="panel-heading">
                         <h3 class="panel-title">
-                            Nom de la console
+                            <?php echo $console['NomConsole']; ?>
                         </h3>
                     </section>
                     <section class="panel-body">
                         <!-- ------------------ ImageConsole ------------------- -->
                         <section class="col-sm-4">
-                            <article class="panel panel-default">
-                                <section class="panel-body">
-                                    <img src="./Img/N64.png" alt="Nintendo 64"/>
-                                </section>
-                                <section class="row">
-                                    <section class="col-xs-4 col-md-3">
-                                        <a href="#" class="thumbnail">
-                                            <img src="./Img/N64.png" alt="test">
-                                        </a>                                    
-                                    </section>
-                                    <section class="col-xs-4 col-md-3">
-                                        <a href="#" class="thumbnail">
-                                            <img src="./Img/N64.png" alt="test">
-                                        </a>
-                                        
-                                    </section>
-                                    <section class="col-xs-4 col-md-3">
-                                        <a href="#" class="thumbnail">
-                                            <img src="./Img/N64.png" alt="test">
-                                        </a>
-                                        
-                                    </section>
-                                </section></article>
-
+                            <img src="<?php echo $console['ImgConsole']; ?>" alt="<?php echo 'Image de la console ' . $console['NomConsole']; ?>" class="img-responsive img-rounded"/>
                         </section>
                         <!-- ---------------- Fin Pochette ----------------- -->
 
@@ -82,16 +64,16 @@ ManageNavigation();
                                 </section>
                                 <ul class="list-group">
                                     <li class="list-group-item">
-                                        Date de sortie : .....
+                                        Date de sortie : <?php echo ($console['DateConsole'] != NULL) ? $console['DateConsole'] : 'N/A'; ?>
                                     </li>
                                     <li class="list-group-item">
-                                        Processeur : .....
+                                        Processeur : <?php echo ($console['Processeur'] != NULL) ? $console['Processeur'] : 'N/A'; ?>
                                     </li>
                                     <li class="list-group-item">
-                                        Mémoire : ....
+                                        Mémoire : <?php echo ($console['Memoire'] != NULL) ? $console['Memoire'] : 'N/A'; ?>
                                     </li>
                                     <li class="list-group-item">
-                                        Format jeux : ....
+                                        Format jeux : <?php echo ($console['FormatJeux'] != NULL) ? $console['FormatJeux'] : 'N/A'; ?>
                                     </li>
                                 </ul>
                             </article>
@@ -106,21 +88,9 @@ ManageNavigation();
                                         Jeux supportés
                                     </h4>
                                 </section>
-                                <ul class="list-group">
-                                    <li class="list-group-item">
-                                       Mario1
-
-                                    </li>
-                                    <li class="list-group-item">
-                                        Mario2
-                                    </li>
-                                    <li class="list-group-item">
-                                        Mario3
-                                    </li>
-                                    <li class="list-group-item">
-                                        Mario4
-                                    </li>
-                                </ul>
+                                <section class="list-group">
+                                    <?php echo displayJeux($idConsole); ?>
+                                </section>
                             </article>
                         </section>
                         <!-- -------------- Fin caractéristiques ---------------- -->                      

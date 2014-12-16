@@ -42,3 +42,12 @@ function getNameById($id) {
     
     return $st;
 }
+
+function getConsole($id){
+    $bdd = connect();
+    $sql = 'SELECT * From consoles WHERE idConsole=:id';
+
+    $st = prepareExecute($sql, $bdd, array('id' => $id))->Fetch();
+
+    return $st;
+}

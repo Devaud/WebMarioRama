@@ -105,11 +105,7 @@ if (isset($_POST['submit'])) {
                                 <section class="panel-body">
 
                                     <?php
-                                    if ($videoNULL) {
-                                        echo $video;
-                                    } else {
-                                        echo displayVideo($video);
-                                    }
+                                    echo ($videoNULL) ? $video : displayVideo($video);
                                     ?>
 
                                 </section>
