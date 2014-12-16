@@ -133,15 +133,26 @@ function displayNav() {
         $text .= '</li>';
     }
 
-
-    if ($page == 'consoles') {
-        $text .= '<li class="active" ><a href="./Consoles.php?page=consoles">Consoles</a></li> ';
+    if (!$connect) {
+        if ($page == 'consoles') {
+            $text .= '<li class="active" ><a href="./Consoles.php?page=consoles">Consoles</a></li> ';
+        } else {
+            $text .= '<li><a href="./Consoles.php?page=consoles">Consoles</a></li> ';
+        }
     } else {
-        $text .= '<li><a href="./Consoles.php?page=consoles">Consoles</a></li> ';
+        $text .= '<li class="dropdown">';
+        $text .= '<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Consoles  <span class="caret"></span></a>';
+        $text .= '<ul class="dropdown-menu" role="menu">';
+        $text .= '<li><a href="./Consoles.php?page=consoles">Liste consoles</a></li>';
+        $text .= '<li><a href="./ajoutJeu.php?page=ajoutJeu">Ajouter une console</a></li>';
+        $text .= '</ul>';
+        $text .= '</li>';
     }
 
+
+
     $text .= '</ul>';
-    
+
     $text .= '<ul class="nav navbar-nav navbar-right">';
     $text .= '<li><button onclick="mute()" class="btn btn-default "><span class="glyphicon glyphicon-volume-up" id="volume"></span></button><audio autoplay="autoplay" loop="loop" id="player"><source src="./Media/soundtrack.mp3" type="audio/mpeg" />Your browser does not support the audio element.</audio></li>';
     if ($connect) {
@@ -225,7 +236,7 @@ function displayAjout($id) {
     $text = '';
 
     $text .='<section class=\'list-group-item\'>';
-    $text .= '<form method=\'POST\' action=\'./ficheJeux.php?page=figheJeu&id=' .$id. '\' class=\'form-horizontal\'>';
+    $text .= '<form method=\'POST\' action=\'./ficheJeux.php?page=figheJeu&id=' . $id . '\' class=\'form-horizontal\'>';
     $text .= '<section class=\'form-group col-sm-offset-12\'>';
     $text .= '<section class=\'col-sm-7\'>';
     $text .= '<select class="form-control" name="console">';
@@ -239,5 +250,26 @@ function displayAjout($id) {
     $text .= '</form>';
     $text .= '</section>';
 
+    return $text;
+}
+
+function displayConsoles() {
+
+    $text = '';
+    $array = getAllConsole();
+
+    foreach ($array as $value) {
+        $text .= '<section class="col-sm-4 col-md-3">';
+        $text .= '<section class="thumbnail">';
+        $text .= '<section class="caption">';
+        $text .= '<h3>' . $value['NomConsole'] . '</h3>';
+        $text .= '</section>';
+        $text .= '<a href="./ficheConsole.php?page=ficheConsole&console=' . $value['idConsole'] . '">';
+        $text .= '<img src="' . $value['ImgConsole'] . '" alt="' . $value['NomConsole'] . '" class="img-responsive img-rounded">';
+        $text .= '</a>';
+        $text .= '</section>';
+        $text .= '</section>';
+    }
+    
     return $text;
 }

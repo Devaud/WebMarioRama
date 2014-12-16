@@ -35,73 +35,11 @@ ManageNavigation();
             <!-- ------------------------- Fin Menu ------------------------ -->
 
             <!-- -------------------------- Contenu ------------------------ -->
-            <!--<section class="col-sm-12 marg">
-                <article class="panel panel-default">
-                    <section class="panel-heading">
-                        <h3 class="panel-title">
-                            Nom de la console
-                        </h3>
-                    </section>
             <section class="row">
-                <section class="col-xs-4 col-md-3">
-                    <section class="panel-heading">
-                    <h1 class="panel-title">
-                            Nom de la console
-                        </h1>
-                        </section>
-                    <a href="#" class="thumbnail">
-                        <img src="./Img/N64.png" alt="...">
-                    </a>
-                </section>
-                </article>
-            </section>-->
-            <section class="row">
-                <section class="col-sm-4 col-md-3">
-                    <section class="thumbnail">
-                        <section class="caption">
-                            <h3>Nintendo 64</h3>                                          
-                        </section>
-                        <a href="#">
-                            <img src="./Media/SMB_POCHETTE.jpg" alt="..." class="img-responsive img-rounded">
-                        </a>                        
-                    </section>                 
-                </section>
-                <section class="col-sm-4 col-md-3">
-                    <section class="thumbnail">
-                        <section class="caption">
-                            <h3>Nintendo 64</h3>                                          
-                        </section>
-                        <a href="#">
-                            <img src="./Media/SMB_POCHETTE.jpg" alt="..." class="img-responsive img-rounded">
-                        </a>                         
-                    </section>     
-                </section>
-                <section class="col-sm-4 col-md-3">
-                    <section class="thumbnail">
-                        <section class="caption">
-                            <h3>Nintendo 64</h3>                                          
-                        </section>
-                        <a href="#">
-                            <img src="./Media/SMB_POCHETTE.jpg" alt="..." class="img-responsive img-rounded">
-                        </a>                        
-                    </section>     
-                </section>
-                <section class="col-sm-4 col-md-3">
-                    <section class="thumbnail">
-                        <section class="caption">
-                            <h3>Nintendo 64</h3>                                          
-                        </section>
-                        <a href="#">
-                            <img src="./Media/SMB_POCHETTE.jpg" alt="..." class="img-responsive img-rounded">
-                        </a>                        
-                    </section>     
-                </section>
-
+                <?php
+                echo displayConsoles();
+                ?>   
             </section>
-
-
-
-
             <!-- ----------------------- Fin Contenu ----------------------- -->
 
             <!-- ----------------------- Pied de page ---------------------- -->
