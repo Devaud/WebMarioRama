@@ -44,11 +44,8 @@ ManageNavigation();
                             Introduction
                         </h1>
                         <p>
-                            Bulbasaur Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ivysaur Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                            Venusaur Lorem ipsum dolor sit amet, consectetur adipiscing elit. Charmander Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                            Charmeleon Lorem ipsum dolor sit amet, consectetur adipiscing elit. Charizard Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                            Squirtle Lorem ipsum dolor sit amet, consectetur adipiscing elit. Wartortle Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                            Blastoise Lorem ipsum dolor sit amet, consectetur adipiscing elit. Caterpie Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                            Bienvenu Chers joueuses, Chers joueurs et fans de la série de jeux Mario !
+                            Ce site répertorie tous les jeux dans le quel Mario apparait ainsi que les consoles sur lesquelles ces jeux sont disponibles.
                         </p>
                         <h3>
                             Evolution des jeux Mario :
