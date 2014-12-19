@@ -15,6 +15,7 @@ if (!$connect) {
 
 $console = '';
 $erreur = '';
+$existJeu = false;
 
 if (isset($_POST['submit'])) {
     // Initialisation des variable
@@ -51,57 +52,60 @@ if (isset($_POST['submit'])) {
     } else {
         $type = NULL;
     }
+    if (!existJeu($titre)) {
+        // Traitement de l'image uploader
+        if (!empty($_FILES['file']['name'])) {
+            // Information de l'image
+            $chemin_tmp = $_FILES['file']['tmp_name'];
+            $pathinfo = pathinfo($_FILES['file']['name']);
+            $extension = $pathinfo['extension'];
 
-    // Traitement de l'image uploader
-    if (!empty($_FILES['file']['name'])) {
-        // Information de l'image
-        $chemin_tmp = $_FILES['file']['tmp_name'];
-        $pathinfo = pathinfo($_FILES['file']['name']);
-        $extension = $pathinfo['extension'];
+            //Test si le dossier du jeux exist pas. S'il n'exist pas le dossier est créé.
+            $dossier = './Media/' . str_replace(' ', '', $titre);
+            if (!file_exists($dossier)) {
+                mkdir($dossier);
+            }
 
-        //Test si le dossier du jeux exist pas. S'il n'exist pas le dossier est créé.
-        $dossier = './Media/' . str_replace(' ', '', $titre);
-        if (!file_exists($dossier)) {
-            mkdir($dossier);
+            // Initialisation du chemin avec le nom de l'image et son extension
+            $cheminImage = $dossier . '/' . str_replace(' ', '', $titre) . '_POCHETTE.' . $extension;
+            move_uploaded_file($chemin_tmp, $cheminImage); // Upload l'image
+            $img = $cheminImage;
         }
 
-        // Initialisation du chemin avec le nom de l'image et son extension
-        $cheminImage = $dossier . '/' . str_replace(' ', '', $titre) . '_POCHETTE.' . $extension;
-        move_uploaded_file($chemin_tmp, $cheminImage); // Upload l'image
-        $img = $cheminImage;
-    }
-    
-    // Traitement de la vidéo uploader
-    if (!empty($_FILES['video']['name'])) {
-        // Information de la video
-        $chemin_tmp_video = $_FILES['video']['tmp_name'];
-        $pathinfo = pathinfo($_FILES['video']['name']);
-        $extension = $pathinfo['extension'];
+        // Traitement de la vidéo uploader
+        if (!empty($_FILES['video']['name'])) {
+            // Information de la video
+            $chemin_tmp_video = $_FILES['video']['tmp_name'];
+            $pathinfo = pathinfo($_FILES['video']['name']);
+            $extension = $pathinfo['extension'];
 
-        //Test si le dossier du jeux exist pas. S'il n'exist pas le dossier est créé.
-        $dossier = './Media/' . str_replace(' ', '', $titre);
-        if (!file_exists($dossier)) {
-            mkdir($dossier);
+            //Test si le dossier du jeux exist pas. S'il n'exist pas le dossier est créé.
+            $dossier = './Media/' . str_replace(' ', '', $titre);
+            if (!file_exists($dossier)) {
+                mkdir($dossier);
+            }
+
+            // Initialisation du chemin avec le nom de la vidéo et son extension
+            $cheminVideo = $dossier . '/' . str_replace(' ', '', $titre) . '_VIDEO.' . $extension;
+            move_uploaded_file($chemin_tmp_video, $cheminVideo); // Upload l'image
+            $video = $cheminVideo;
         }
 
-        // Initialisation du chemin avec le nom de la vidéo et son extension
-        $cheminVideo = $dossier . '/' . str_replace(' ', '', $titre) . '_VIDEO.' . $extension;
-        move_uploaded_file($chemin_tmp_video, $cheminVideo); // Upload l'image
-        $video = $cheminVideo;
+        // Traitement avec la base de données
+        $id = addGame($titre, $date, $desc, $video, $img); // Ajout des informations concernant le jeu
+        $idConsole = getId($console); // Récupère l'id de la console
+        jeuConsole($id, $idConsole['idConsole']); // Associe le jeu à la console
+
+        if ($type != NULL) {
+            $idType = getIdType($type); // Récupère l'id du type du jeu
+            jeuType($id, $idType['idType']); // Associe le jeu avec le type
+        }
+
+        // Redirige sur la page du jeu
+        header('location: ./ficheJeux.php?page=ficheJeu&id=' . $id);
+    }else{
+        $existJeu = true;
     }
-
-    // Traitement avec la base de données
-    $id = addGame($titre, $date, $desc, $video, $img); // Ajout des informations concernant le jeu
-    $idConsole = getId($console); // Récupère l'id de la console
-    jeuConsole($id, $idConsole['idConsole']); // Associe le jeu à la console
-
-    if ($type != NULL) {
-        $idType = getIdType($type); // Récupère l'id du type du jeu
-        jeuType($id, $idType['idType']); // Associe le jeu avec le type
-    }
-
-    // Redirige sur la page du jeu
-    header('location: ./ficheJeux.php?page=ficheJeu&id=' . $id); 
 }
 ?>
 <html>
@@ -139,6 +143,11 @@ if (isset($_POST['submit'])) {
                     </section>
                     <section class="panel-body">
 
+                        <?php
+                        if($existJeu){
+                            echo displayError(' Le jeu existe déjà');
+                        }
+                        ?>
                         <section class='col-sm-5 col-sm-offset-4'>
                             <form action='./ajoutJeu.php' method='post' role='form' class="form-horizontal" enctype="multipart/form-data">
                                 <section class='form-group'>
@@ -162,7 +171,7 @@ if (isset($_POST['submit'])) {
                                     </select>
                                     <label  for="picture">Pochette du jeu :</label>
                                     <input type="file" name="file" id="picture" required/>
-                                    
+
                                     <label  for="video">Video (Trailer) :</label>
                                     <input type="file" name="video" id="video" />
 

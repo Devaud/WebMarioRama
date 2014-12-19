@@ -80,3 +80,12 @@ function getIdJeu($nom) {
 
     return $st['idJeu'];
 }
+
+function existJeu($nom){
+    $bdd = connect();
+    $sql = 'SELECT NomJeu FROM jeux WHERE NomJeu=:jeu';
+
+    $st = prepareExecute($sql, $bdd, array('jeu' => $nom))->Fetch();
+
+    return (!empty($st)) ? true : false;
+}
