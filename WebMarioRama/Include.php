@@ -218,7 +218,7 @@ function displayJeux($id) {
     if($arrayJeux != NULL){
        for ($i = 0; count($arrayJeux) > $i; $i++) {
         $idJeu = getIdJeu($arrayJeux[$i]);
-        $text .= '<a href = "./ficheJeux.php?page=ficheJeux&id=' . $idJeu . '" class = "list-group-item">' . $arrayPlateformes[$i] . '</a>';
+        $text .= '<a href = "./ficheJeux.php?page=ficheJeux&id=' . $idJeu . '" class = "list-group-item">' . $arrayJeux[$i] . '</a>';
     } 
     }else{
         $text = 'Il n\'y a pas de jeux associé';
