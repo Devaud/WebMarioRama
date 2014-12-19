@@ -145,7 +145,7 @@ function displayNav() {
         $text .= '<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Consoles  <span class="caret"></span></a>';
         $text .= '<ul class="dropdown-menu" role="menu">';
         $text .= '<li><a href="./Consoles.php?page=consoles">Liste consoles</a></li>';
-        $text .= '<li><a href="./ajoutJeu.php?page=ajoutJeu">Ajouter une console</a></li>';
+        $text .= '<li><a href="./ajoutConsole.php?page=ajoutConsole">Ajouter une console</a></li>';
         $text .= '</ul>';
         $text .= '</li>';
     }
@@ -212,13 +212,18 @@ function displayPlateformes($id) {
 }
 
 function displayJeux($id) {
-    $arrayPlateformes = getJeuxById($id);
+    $arrayJeux = getJeuxById($id);
     $text = '';
 
-    for ($i = 0; count($arrayPlateformes) > $i; $i++) {
-        $idJeu = getIdJeu($arrayPlateformes[$i]);
+    if($arrayJeux != NULL){
+       for ($i = 0; count($arrayJeux) > $i; $i++) {
+        $idJeu = getIdJeu($arrayJeux[$i]);
         $text .= '<a href = "./ficheJeux.php?page=ficheJeux&id=' . $idJeu . '" class = "list-group-item">' . $arrayPlateformes[$i] . '</a>';
+    } 
+    }else{
+        $text = 'Il n\'y a pas de jeux associé';
     }
+    
 
     return $text;
 }
@@ -284,5 +289,17 @@ function displayConsoles() {
         $text .= '</section>';
     }
     
+    return $text;
+}
+
+function displayError($message) {
+    $text = '';
+
+    $text .= '<section class="alert alert-danger" role="alert">';
+    $text .= '<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>';
+    $text .= '<span class="sr-only">Error:</span>';
+    $text .= $message;
+    $text .= '</section>';
+
     return $text;
 }

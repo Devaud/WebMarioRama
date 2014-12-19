@@ -56,18 +56,23 @@ function getJeuxById($id) {
     $sql = 'SELECT idJeu FROM concerne WHERE idConsole=:id';
     $concerne = prepareExecute($sql, $bdd, array('id' => $id))->FetchAll();
 
-    foreach ($concerne as $JeuId) {
-        $sql = 'SELECT NomJeu FROM jeux WHERE idJeu=:id';
-        $id = $JeuId['idJeu'];
-        $console = prepareExecute($sql, $bdd, array('id' => $id))->Fetch();
-        
-        $st[] = $console['NomJeu'];
+    if (!empty($concerne)) {
+        foreach ($concerne as $JeuId) {
+            $sql = 'SELECT NomJeu FROM jeux WHERE idJeu=:id';
+            $id = $JeuId['idJeu'];
+            $console = prepareExecute($sql, $bdd, array('id' => $id))->Fetch();
+
+            $st[] = $console['NomJeu'];
+        }
+    } else {
+        $st = NULL;
     }
-    
+
+
     return $st;
 }
 
-function getIdJeu($nom){
+function getIdJeu($nom) {
     $bdd = connect();
     $sql = 'SELECT idJeu FROM jeux WHERE NomJeu=:name';
 

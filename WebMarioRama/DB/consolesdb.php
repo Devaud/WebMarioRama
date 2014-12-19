@@ -51,3 +51,23 @@ function getConsole($id){
 
     return $st;
 }
+
+function addConsole($nom, $date, $img = NULL, $proc = NULL, $memoire = NULL, $format = NULL){
+    $bdd = connect();
+    $sql = 'INSERT INTO consoles (NomConsole, ImgConsole, DateConsole, Processeur, Memoire, FormatJeux) VALUES (:nom, :img, :date, :proc, :memoire, :format)';
+    
+    if (prepareExecute($sql, $bdd, array('nom' => $nom, 'img' => $img, 'date' => $date, 'proc' => $proc, 'memoire' => $memoire, 'format' => $format))) {
+        return $bdd->lastInsertId();
+    } else {
+        return NULL;
+    }
+}
+
+function existConsole($nom){
+    $bdd = connect();
+    $sql = 'SELECT NomConsole FROM consoles WHERE NomConsole=:console';
+
+    $st = prepareExecute($sql, $bdd, array('console' => $nom))->Fetch();
+
+    return (!empty($st)) ? true : false;
+}
