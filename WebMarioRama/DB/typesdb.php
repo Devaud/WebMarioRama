@@ -7,6 +7,10 @@
  */
 require_once './DB/connection.php';
 
+/**
+ * Récupère tout les styles qui sont dans la base de données
+ * @return array Tableau des styles
+ */
 function getAllType() {
     $bdd = connect();
     $sql = 'SELECT * From types';
@@ -16,6 +20,11 @@ function getAllType() {
     return $st;
 }
 
+/**
+ * Récupère l'id d'un type
+ * @param string $nom nom du type
+ * @return string id du type
+ */
 function getIdType($nom) {
     $bdd = connect();
     $sql = 'SELECT idType From types WHERE NomType=:nom';
@@ -25,6 +34,11 @@ function getIdType($nom) {
     return $st;
 }
 
+/**
+ * Réupère un type associé a un jeu
+ * @param string $id id du jeu
+ * @return string id du type trouvé
+ */
 function getTypeById($id){
     $bdd = connect();
     $sql = 'SELECT idType From etre WHERE idJeu=:id';

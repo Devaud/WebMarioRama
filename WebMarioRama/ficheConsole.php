@@ -9,6 +9,7 @@ include './Include.php';
 LoadFromSession();
 ManageNavigation();
 
+// Récupère la console
 if (isset($_GET['console'])) {
     $idConsole = $_GET['console'];
     $console = getConsole($idConsole);

@@ -9,14 +9,17 @@ include './Include.php';
 LoadFromSession();
 ManageNavigation();
 
+// Test si l'utilisateur est connecté
 if (!$connect) {
     header('location: ./index.php?page=home');
 }
 
+// Initialise les variables d'erreur
 $erreur = '';
 $erreurConsoleDate = false;
 $erreurExist = false;
 
+// Test s'il y a un envoie
 if (isset($_POST['submit'])) {
     // Initialisation des variable
     $nomConsole = (!empty($_POST['nomConsole'])) ? $_POST['nomConsole'] : NULL;
@@ -25,7 +28,7 @@ if (isset($_POST['submit'])) {
     // Vérifie si les informations ne sont pas vide et initialise les variables
     $processeur = (!empty($_POST['processeur'])) ? $_POST['processeur'] : NULL;
     $memoire = (!empty($_POST['memoire'])) ? $_POST['memoire'] : NULL;
-    $formaJeu = (!empty($_POST['formatJeu'])) ? $_POST['formatJeu'] : NULL;
+    $formatJeu = (!empty($_POST['formatJeu'])) ? $_POST['formatJeu'] : NULL;
 
     // Test l'existance de la date et la met au bon format
     if ($date != NULL) {

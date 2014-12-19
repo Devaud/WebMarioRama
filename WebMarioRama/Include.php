@@ -175,6 +175,10 @@ function displayNav() {
     return $text;
 }
 
+/**
+ * Affiche les option du type
+ * @return string code html
+ */
 function displayOptionType() {
     $text = '';
 
@@ -187,6 +191,10 @@ function displayOptionType() {
     return $text;
 }
 
+/**
+ * Affiche les options des consoles
+ * @return string code html
+ */
 function displayOptionConsole() {
     $text = '';
 
@@ -199,6 +207,11 @@ function displayOptionConsole() {
     return $text;
 }
 
+/**
+ * Affiche les plates-formes qui sont relier a un jeu
+ * @param string $id id du jeu
+ * @return string code html
+ */
 function displayPlateformes($id) {
     $arrayPlateformes = getNameById($id);
     $text = '';
@@ -211,6 +224,11 @@ function displayPlateformes($id) {
     return $text;
 }
 
+/**
+ * Affiche les jeux qui sont relier a une plate-forme
+ * @param string $id id de la plate-forme
+ * @return string code html
+ */
 function displayJeux($id) {
     $arrayJeux = getJeuxById($id);
     $text = '';
@@ -228,6 +246,12 @@ function displayJeux($id) {
     return $text;
 }
 
+/**
+ * Affiche une vidéo
+ * @param string $link chemin de la video concernée
+ * @param string $poster Poster de la vidée, poster par défaut existant
+ * @return string
+ */
 function displayVideo($link, $poster = './Media/mario_poster_default.jpeg') {
     $text = '';
     $text .= '<video width="100%" controls preload="metadata" poster="' . $poster . '">
@@ -237,6 +261,12 @@ function displayVideo($link, $poster = './Media/mario_poster_default.jpeg') {
     return $text;
 }
 
+/**
+ * Affiche une liste de jeu entre deux années
+ * @param date $dateDebut année de début
+ * @param date $dateFin année de fin
+ * @return string code html
+ */
 function displayListeJeux($dateDebut, $dateFin) {
     $text = '';
 
@@ -249,6 +279,11 @@ function displayListeJeux($dateDebut, $dateFin) {
     return $text;
 }
 
+/**
+ * Affiche l'ajout d'une console pour une liaison entre une console et un jeu
+ * @param string $id id du jeu
+ * @return string code html
+ */
 function displayAjout($id) {
 
     $text = '';
@@ -271,6 +306,10 @@ function displayAjout($id) {
     return $text;
 }
 
+/**
+ * Affiche les consoles
+ * @return string code html
+ */
 function displayConsoles() {
 
     $text = '';
@@ -292,6 +331,11 @@ function displayConsoles() {
     return $text;
 }
 
+/**
+ * Affiche un message d'erreur
+ * @param string $message le message d'erreur
+ * @return string code html
+ */
 function displayError($message) {
     $text = '';
 

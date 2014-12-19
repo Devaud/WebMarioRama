@@ -9,16 +9,19 @@ include './Include.php';
 LoadFromSession();
 ManageNavigation();
 
+// Test si l'utilisateur est connecté
 if($connect){
     header('location: ./index.php?page=home');
 }
 
+// Test si un submit est reçu
 if(isset($_POST['submit'])){
     $pseudo = $_POST['pseudo'];
     $mdp = sha1($_POST['password']);
     
-    $pseudo = strip_tags(trim($pseudo));
+    $pseudo = strip_tags(trim($pseudo)); // Netoye le pseudo des balises html
     
+    // connecte l'utilisateur
     if(connectUser($pseudo, $mdp)){
         $user = $pseudo;
         $connect = true;

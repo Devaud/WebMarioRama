@@ -9,14 +9,17 @@ include './Include.php';
 LoadFromSession();
 ManageNavigation();
 
+// Test si l'utilisateur est connecté
 if (!$connect) {
     header('location: ./index.php?page=home');
 }
 
+// Initialise les variables d'erreur
 $console = '';
 $erreur = '';
 $existJeu = false;
 
+// Test s'il y a un envoie
 if (isset($_POST['submit'])) {
     // Initialisation des variable
     $titre = strip_tags(trim($_POST['titre']));

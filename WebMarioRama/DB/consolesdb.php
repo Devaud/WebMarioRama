@@ -8,6 +8,10 @@
 
 require_once './DB/connection.php';
 
+/**
+ * Récupèe toute les consoles
+ * @return array tableau des consoles
+ */
 function getAllConsole() {
     $bdd = connect();
     $sql = 'SELECT * From consoles';
@@ -17,6 +21,11 @@ function getAllConsole() {
     return $st;
 }
 
+/**
+ * Récupère l'id selon le nom
+ * @param string $nom nom de la console
+ * @return string id de la console
+ */
 function getId($nom) {
     $bdd = connect();
     $sql = 'SELECT idConsole From consoles WHERE NomConsole=:nom';
@@ -26,6 +35,11 @@ function getId($nom) {
     return $st;
 }
 
+/**
+ * Récupère le nom des console associé a un jeu
+ * @param string $id id du jeu
+ * @return array tableau du nom des consoles
+ */
 function getNameById($id) {
     $bdd = connect();
 
@@ -43,6 +57,11 @@ function getNameById($id) {
     return $st;
 }
 
+/**
+ * Récupère une console
+ * @param string $id id de la console
+ * @return array Tableau des informations de la console
+ */
 function getConsole($id){
     $bdd = connect();
     $sql = 'SELECT * From consoles WHERE idConsole=:id';
@@ -52,6 +71,16 @@ function getConsole($id){
     return $st;
 }
 
+/**
+ * Ajout une console
+ * @param string $nom Nom de la console
+ * @param array $date date de sortie
+ * @param string $img lien de l'image
+ * @param string $proc processor de la console
+ * @param string $memoire mémoire de la console
+ * @param string $format format des jeu
+ * @return id id du dernier élément ajouter
+ */
 function addConsole($nom, $date, $img = NULL, $proc = NULL, $memoire = NULL, $format = NULL){
     $bdd = connect();
     $sql = 'INSERT INTO consoles (NomConsole, ImgConsole, DateConsole, Processeur, Memoire, FormatJeux) VALUES (:nom, :img, :date, :proc, :memoire, :format)';
@@ -63,6 +92,11 @@ function addConsole($nom, $date, $img = NULL, $proc = NULL, $memoire = NULL, $fo
     }
 }
 
+/**
+ * Test si la console existe déjà
+ * @param string $nom nom de la console
+ * @return bool vrai, faux selon l'existance de la console
+ */
 function existConsole($nom){
     $bdd = connect();
     $sql = 'SELECT NomConsole FROM consoles WHERE NomConsole=:console';

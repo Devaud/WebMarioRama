@@ -9,6 +9,7 @@
 include 'include.php';
 LoadFromSession();
 
+// Test si l'utilisateur est connecté
 if ($connect) {
     $user = '';
     $connect = false;

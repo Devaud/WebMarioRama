@@ -9,11 +9,13 @@ include './Include.php';
 LoadFromSession();
 ManageNavigation();
 
+// Récupère l'id du jeu
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
-    $jeu = getGame($id);
-
+    $jeu = getGame($id); // Cherche le jeu
+    
+    // Récupère les infos
     $idJeu = $jeu['idJeu'];
     $type = getTypeById($jeu['idJeu']);
     $pochette = $jeu['ImgJeu'];
@@ -23,12 +25,14 @@ if (isset($_GET['id'])) {
     $video = $jeu['Video'];
     $videoNULL = false;
 
+    // Test s'il y a une vidéo
     if ($video == '') {
         $videoNULL = true;
         $video = 'pas de video disponible';
     }
 }
 
+// Test si c'est un submit
 if (isset($_POST['submit'])) {
     $console = $_POST['console'];
     
