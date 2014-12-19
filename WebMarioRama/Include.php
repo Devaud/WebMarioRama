@@ -13,6 +13,7 @@ include './DB/typesdb.php';
 include './DB/consolesdb.php';
 include './DB/jeuxdb.php';
 
+
 /* * **********************************************
  *  **          VARIABLES GLOBALES              ***
  *  ********************************************* */
