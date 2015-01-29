@@ -49,4 +49,42 @@ function getTypeById($id){
     $st = prepareExecute($sql, $bdd, array('idType' => $idType['idType']))->Fetch();
     return $st;
 }
+
+/**
+ * Vérifie si un type existe
+ * @param string $type nom du type
+ * @return boolean true si le type existe déjà
+ */
+function existType($type){
+    $bdd = connect();
+    $sql = 'SELECT NomType FROM types WHERE NomType=:type';
+    
+    $st = prepareExecute($sql, $bdd, array('type' => $type))->Fetch();
+    
+    return (!empty($st)) ? true : false;
+}
+
+/**
+ * Ajout du type
+ * @param string $type nom du type
+ */
+function ajoutType($type){
+    $bdd = connect();
+    $sql = 'INSERT INTO types (NomType) VALUES (:type)';
+    
+    prepareExecute($sql, $bdd, array('type' => $type));
+}
+
+/**
+ * Récpère les infomrations dans la table
+ * @param string $table nom de la table
+ * @return string le résultat de la requete
+ */
+function getListe($table){
+    $bdd = connect();
+    $sql = 'SELECT * FROM ' . $table;
+    $st = prepareExecute($sql, $bdd)->FetchAll();
+    
+    return $st;
+}
     

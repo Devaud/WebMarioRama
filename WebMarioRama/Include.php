@@ -130,6 +130,7 @@ function displayNav() {
         $text .= '<ul class="dropdown-menu" role="menu">';
         $text .= '<li><a href="./jeux.php?page=jeux">Liste jeux</a></li>';
         $text .= '<li><a href="./ajoutJeu.php?page=ajoutJeu">Ajouter un jeu</a></li>';
+        $text .= '<li><a href="./ajoutType.php?page=ajoutType">Ajouter un type de jeu</a></li>';
         $text .= '</ul>';
         $text .= '</li>';
     }
@@ -344,6 +345,41 @@ function displayError($message) {
     $text .= '<span class="sr-only">Error:</span>';
     $text .= $message;
     $text .= '</section>';
+
+    return $text;
+}
+
+/**
+ * Affiche un message de success
+ * @param string $message message
+ * @return string Le message avec html
+ */
+function displaySuccess($message) {
+    $text = '';
+
+    $text .= '<section class="alert alert-success" role="alert">';
+    $text .= '<span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span>';
+    $text .= '<span class="sr-only">Success:</span>';
+    $text .= $message;
+    $text .= '</section>';
+
+    return $text;
+}
+
+/**
+ * Affiche de la liste
+ * @param string $table nom de la table
+ * @return string code html de la liste
+ */
+function liste($table, $champ) {
+    $array = getListe($table);
+    $text = '';
+
+    foreach ($array as $value) {
+        $text .= '<tr>';
+        $text .= '<td>' . $value[0] . '</td><td>' . $value[1] . '</td>';
+        $text .= '</tr>';
+    }
 
     return $text;
 }
