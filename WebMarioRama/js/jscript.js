@@ -23,9 +23,13 @@ $(function () {
             $("#pseudoGroup").attr("class", "form-group has-error has-feedback");
             $("#pseudo").next(".cacher").fadeIn();
             valid = false;
+        } else if (!$("#pseudo").val().match(/^[a-z0-9]+$/i)) {
+            $("#pseudoGroup").attr("class", "form-group has-error has-feedback");
+            $("#pseudo").next(".cacher").fadeIn();
+            valid = false;
         } else {
+            $("#pseudo").next(".cacher").hide();
             $("#pseudoGroup").attr("class", "form-group");
-            $("#pseudo").next(".cacher").fadeOut();
         }
 
         if ($("#commentaire").val() == "") {
@@ -33,8 +37,8 @@ $(function () {
             $("#commentaire").next(".cacher").fadeIn();
             valid = false;
         } else {
+            $("#commentaire").next(".cacher").hide();
             $("#commentaireGroup").attr("class", "form-group");
-            $("#commentaire").next(".cacher").fadeOut();
         }
 
         return valid;
