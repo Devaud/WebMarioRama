@@ -152,19 +152,21 @@ if (isset($_POST['submit'])) {
                     </section>
 
                     <section class="panel-body">
-                        <article class="col-sm-12 comms">
-                            <section>
-                                <section class="col-sm-6 commsPseudo">
-                                    dsa
-                                </section>
-                                
-                                <section class="col-sm-6 commsDate">
-                                    ds
-                                </section>
+                        <article class="col-sm-12">
+
+                            <section class="col-sm-6 commsPseudo">
+                                Pseudo
                             </section>
-                            <p>
-                                mkldmsla 
-                            </p>
+
+                            <section class="col-sm-6 commsDate">
+                                12.04.2014
+                            </section>
+
+                            <section class="col-sm-12 comms">
+                                <p>
+                                    Il est trop bien se jeux. 
+                                </p>
+                            </section>
 
                         </article>
                     </section>
