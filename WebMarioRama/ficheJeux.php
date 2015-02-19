@@ -50,6 +50,7 @@ if (isset($_POST['submit'])) {
         <link rel="stylesheet" href="./css/bootstrap-theme.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="./js/bootstrap.min.js"></script>
+        <script src="./js/jscript.js" ></script>
         <script src="./js/music.js" ></script>
 
         <!-- Fichier créer par nous -->
@@ -176,23 +177,27 @@ if (isset($_POST['submit'])) {
 
             <section class="col-sm-4">
                 <article class="panel panel-default">
-
                     <section class="panel-body">
-
                         <fieldset>
                             <legend>
                                 Ajouter un commentaire
                             </legend>
-                            <form>
-                                <section class="form-group">
-                                    <label for="pseudo">Pseudo</label>
+                            <form id="formCommentaire" method="post" action="">
+                                <section class="form-group" id="pseudoGroup">
+                                    <label class="control-label" for="pseudo">Pseudo</label>
                                     <input type="text" class="form-control" id="pseudo" name="pseudo" placeholder="Votre pseudo" />
+                                    
+                                    <span class="glyphicon glyphicon-remove form-control-feedback cacher" aria-hidden="true"></span>
+                                    <span id="inputError2Status cacher" class="sr-only">(error)</span>
                                 </section>
-                                <section class="form-group">
+                                <section class="form-group" id="commentaireGroup">
                                     <label for="commentaire">Commentaire</label>
                                     <textarea class="form-control" rows="3" name="commentaire" id="commentaire" placeholder="Votre commentaire"></textarea>
+                                
+                                    <span class="glyphicon glyphicon-remove form-control-feedback cacher" aria-hidden="true"></span>
+                                    <span id="inputError2Status cacher" class="sr-only">(error)</span>
                                 </section>
-                                <button type="submit" class="btn btn-default">Commenter</button>
+                                <button type="submit" class="btn btn-default" id="envoyer">Commenter</button>
                             </form>
                         </fieldset>
                     </section>

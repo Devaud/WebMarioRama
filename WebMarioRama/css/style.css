@@ -25,6 +25,10 @@ section article section section article section img{
     text-align: right;
     border-bottom: 1px #cccccc solid;
 }
+
+.cacher{
+    display : none;
+}
 /*
 section section article section form{
     width: 355px;
