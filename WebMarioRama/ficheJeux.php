@@ -142,6 +142,50 @@ if (isset($_POST['submit'])) {
                 </article>
             </section>
             <!-- ----------------------- Fin Contenu ----------------------- -->
+            
+            <!-- ----------------------- Commentaire ----------------------- -->
+            <section class="col-sm-8">
+                <article class="panel panel-default">
+                    <section class="panel-heading">
+                        <h3 class="panel-title">
+                            Commentaire
+                        </h3>
+                    </section>
+                    
+                    <section class="panel-body">
+                        
+                    </section>
+                </article>
+            </section>
+            
+            
+            <section class="col-sm-4">
+                <article class="panel panel-default">
+                    
+                    <section class="panel-body">
+                        
+                        <fieldset>
+                            <legend>
+                                Ajouter un commentaire
+                            </legend>
+                            <form>
+                                <section class="form-group">
+                                    <label for="pseudo">Pseudo</label>
+                                    <input type="text" class="form-control" id="pseudo" name="pseudo" placeholder="Votre pseudo" />
+                                </section>
+                                <section class="form-group">
+                                    <label for="commentaire">Commentaire</label>
+                                    <textarea class="form-control" rows="3" name="commentaire" id="commentaire" placeholder="Votre commentaire"></textarea>
+                                </section>
+                                <button type="submit" class="btn btn-default">Commenter</button>
+                            </form>
+                        </fieldset>
+                    </section>
+                </article>
+            </section>
+            <!-- --------------------- Fin Commentaire --------------------- -->
+            
+            
 
             <!-- ----------------------- Pied de page ---------------------- -->
             <?php
