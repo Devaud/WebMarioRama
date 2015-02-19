@@ -12,6 +12,19 @@ section article section section article section img{
     width: 100%;
 }
 
+.comms{
+    border-bottom: 1px #000000 solid;
+}
+
+.commsPseudo{
+    text-align: left;
+    border-bottom: 1px #cccccc solid;
+}
+
+.commsDate{
+    text-align: right;
+    border-bottom: 1px #cccccc solid;
+}
 /*
 section section article section form{
     width: 355px;

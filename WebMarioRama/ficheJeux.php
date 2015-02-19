@@ -14,7 +14,6 @@ if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
     $jeu = getGame($id); // Cherche le jeu
-    
     // Récupère les infos
     $idJeu = $jeu['idJeu'];
     $type = getTypeById($jeu['idJeu']);
@@ -35,7 +34,7 @@ if (isset($_GET['id'])) {
 // Test si c'est un submit
 if (isset($_POST['submit'])) {
     $console = $_POST['console'];
-    
+
     $idConsole = getId($console); // Récupère l'id de la console
     jeuConsole($id, $idConsole['idConsole']); // Associe le jeu à la console
 }
@@ -46,8 +45,8 @@ if (isset($_POST['submit'])) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./css/Normalize.css" />
         <link rel="shortcut icon" type="image/png-icon" href="./res/favicon.png" />
-              <!-- Fichier pour bootstrap -->
-              <link rel="stylesheet" href="./css/bootstrap.min.css">
+        <!-- Fichier pour bootstrap -->
+        <link rel="stylesheet" href="./css/bootstrap.min.css">
         <link rel="stylesheet" href="./css/bootstrap-theme.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="./js/bootstrap.min.js"></script>
@@ -129,7 +128,7 @@ if (isset($_POST['submit'])) {
                                 <section class="list-group">
                                     <?php echo displayPlateformes($idJeu); ?>
                                     <?php
-                                    if($connect){
+                                    if ($connect) {
                                         echo displayAjout($idJeu);
                                     }
                                     ?>
@@ -142,7 +141,7 @@ if (isset($_POST['submit'])) {
                 </article>
             </section>
             <!-- ----------------------- Fin Contenu ----------------------- -->
-            
+
             <!-- ----------------------- Commentaire ----------------------- -->
             <section class="col-sm-8">
                 <article class="panel panel-default">
@@ -151,19 +150,33 @@ if (isset($_POST['submit'])) {
                             Commentaire
                         </h3>
                     </section>
-                    
+
                     <section class="panel-body">
-                        
+                        <article class="col-sm-12 comms">
+                            <section>
+                                <section class="col-sm-6 commsPseudo">
+                                    dsa
+                                </section>
+                                
+                                <section class="col-sm-6 commsDate">
+                                    ds
+                                </section>
+                            </section>
+                            <p>
+                                mkldmsla 
+                            </p>
+
+                        </article>
                     </section>
                 </article>
             </section>
-            
-            
+
+
             <section class="col-sm-4">
                 <article class="panel panel-default">
-                    
+
                     <section class="panel-body">
-                        
+
                         <fieldset>
                             <legend>
                                 Ajouter un commentaire
@@ -184,8 +197,8 @@ if (isset($_POST['submit'])) {
                 </article>
             </section>
             <!-- --------------------- Fin Commentaire --------------------- -->
-            
-            
+
+
 
             <!-- ----------------------- Pied de page ---------------------- -->
             <?php
