@@ -84,7 +84,7 @@ if (isset($_POST['commenter'])) {
             <!-- ------------------------- Fin Menu ------------------------ -->
 
             <!-- -------------------------- Contenu ------------------------ -->
-            <section class="col-sm-12 marg">
+            <section class="col-sm-12">
                 <article class="panel panel-default">
                     <section class="panel-heading">
                         <h3 class="panel-title">

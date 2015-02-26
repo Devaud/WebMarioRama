@@ -29,6 +29,10 @@ section article section section article section img{
 .cacher{
     display : none;
 }
+
+.marg{
+    margin-bottom: 10px;
+}
 /*
 section section article section form{
     width: 355px;

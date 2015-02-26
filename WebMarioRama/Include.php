@@ -394,19 +394,23 @@ function displayCommentaire($idJeu) {
     $array = getCommentaire($idJeu);
 
     $text = '';
-    $text .= '<article class="col-sm-12">';
+
 
     if (!empty($array)) {
         foreach ($array as $comms) {
+            $text .= '<article class="col-sm-12 marg">';
             $text .= '<section class = "col-sm-6 commsPseudo">' . $comms['Pseudo'] . '</section>';
             $text .= '<section class = "col-sm-6 commsDate">' . $comms['DatePublication'] . '</section>';
             $text .= '<section class = "col-sm-12 comms"><p>' . $comms['Commentaire'] . '</p></section>';
+            $text .= '</article>';
         }
-    }else{
+    } else {
+        $text .= '<article class="col-sm-12 marg">';
         $text .= '<p>Il n\'y a pas de commentaire disponible.</p>';
+        $text .= '</article>';
     }
 
-    $text .= '</article>';
+
 
     return $text;
 }
