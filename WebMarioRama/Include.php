@@ -12,6 +12,7 @@ include './DB/usersdb.php';
 include './DB/typesdb.php';
 include './DB/consolesdb.php';
 include './DB/jeuxdb.php';
+include './DB/commentairesdb.php';
 
 
 /* * **********************************************
@@ -234,15 +235,15 @@ function displayJeux($id) {
     $arrayJeux = getJeuxById($id);
     $text = '';
 
-    if($arrayJeux != NULL){
-       for ($i = 0; count($arrayJeux) > $i; $i++) {
-        $idJeu = getIdJeu($arrayJeux[$i]);
-        $text .= '<a href = "./ficheJeux.php?page=ficheJeux&id=' . $idJeu . '" class = "list-group-item">' . $arrayJeux[$i] . '</a>';
-    } 
-    }else{
+    if ($arrayJeux != NULL) {
+        for ($i = 0; count($arrayJeux) > $i; $i++) {
+            $idJeu = getIdJeu($arrayJeux[$i]);
+            $text .= '<a href = "./ficheJeux.php?page=ficheJeux&id=' . $idJeu . '" class = "list-group-item">' . $arrayJeux[$i] . '</a>';
+        }
+    } else {
         $text = 'Il n\'y a pas de jeux associé';
     }
-    
+
 
     return $text;
 }
@@ -298,7 +299,7 @@ function displayAjout($id) {
     $text .= '</select>';
     $text .= '</section>';
     $text .= '<section class=\'col-sm-3\'>';
-    $text .= '<input type="submit" id="submit" class="btn btn-default" name="submit" value="Ajouter" />';
+    $text .= '<input type="submit" id="submit" class="btn btn-default" name="ajoutAsso" value="Ajouter" />';
     $text .= '</section>';
     $text .= '</section>';
     $text .= '</form>';
@@ -328,7 +329,7 @@ function displayConsoles() {
         $text .= '</section>';
         $text .= '</section>';
     }
-    
+
     return $text;
 }
 
@@ -380,6 +381,32 @@ function liste($table, $champ) {
         $text .= '<td>' . $value[0] . '</td><td>' . $value[1] . '</td>';
         $text .= '</tr>';
     }
+
+    return $text;
+}
+
+/**
+ * Affiche les commentaires
+ * @param integer $idJeu id du jeu concerner
+ * @return string code html commentaire
+ */
+function displayCommentaire($idJeu) {
+    $array = getCommentaire($idJeu);
+
+    $text = '';
+    $text .= '<article class="col-sm-12">';
+
+    if (!empty($array)) {
+        foreach ($array as $comms) {
+            $text .= '<section class = "col-sm-6 commsPseudo">' . $comms['Pseudo'] . '</section>';
+            $text .= '<section class = "col-sm-6 commsDate">' . $comms['DatePublication'] . '</section>';
+            $text .= '<section class = "col-sm-12 comms"><p>' . $comms['Commentaire'] . '</p></section>';
+        }
+    }else{
+        $text .= '<p>Il n\'y a pas de commentaire disponible.</p>';
+    }
+
+    $text .= '</article>';
 
     return $text;
 }

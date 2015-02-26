@@ -31,12 +31,29 @@ if (isset($_GET['id'])) {
     }
 }
 
-// Test si c'est un submit
-if (isset($_POST['submit'])) {
+// Test si c'est un ajout
+if (isset($_POST['ajoutAsso'])) {
     $console = $_POST['console'];
 
     $idConsole = getId($console); // Récupère l'id de la console
     jeuConsole($id, $idConsole['idConsole']); // Associe le jeu à la console
+}
+
+$erreurCommentaire = false;
+$success = false;
+
+// Test si un commentaire est ajouté
+if (isset($_POST['commenter'])) {
+    $pseudo = trim(strip_tags($_POST['pseudo']));
+    $commentaire = trim(strip_tags($_POST['commentaire']));
+
+    if (!empty($pseudo) && !empty($commentaire)) {
+        $date = date('d-m-y');
+        addCommentaire($idJeu, $commentaire, $pseudo, $date);
+        $success = true;
+    } else {
+        $erreurCommentaire = true;
+    }
 }
 ?>
 <html>
@@ -151,25 +168,16 @@ if (isset($_POST['submit'])) {
                             Commentaire
                         </h3>
                     </section>
+                    <?php
+                        if($success){
+                            echo displaySuccess(' Commentaire ajouté avec succes');
+                        }
+                    ?>
 
                     <section class="panel-body">
-                        <article class="col-sm-12">
-
-                            <section class="col-sm-6 commsPseudo">
-                                Pseudo
-                            </section>
-
-                            <section class="col-sm-6 commsDate">
-                                12.04.2014
-                            </section>
-
-                            <section class="col-sm-12 comms">
-                                <p>
-                                    Il est trop bien se jeux. 
-                                </p>
-                            </section>
-
-                        </article>
+                        <?php
+                        echo displayCommentaire($idJeu);
+                        ?>
                     </section>
                 </article>
             </section>
@@ -178,26 +186,31 @@ if (isset($_POST['submit'])) {
             <section class="col-sm-4">
                 <article class="panel panel-default">
                     <section class="panel-body">
+                        <?php
+                        if ($erreurCommentaire) {
+                            echo displayError(' Le nom et/ou le commentaire ne peut pas être vide');
+                        }
+                        ?>
                         <fieldset>
                             <legend>
                                 Ajouter un commentaire
                             </legend>
-                            <form id="formCommentaire" method="post" action="">
+                            <form id="formCommentaire" method="post" action="./ficheJeux.php?page=figheJeu&id=<?php echo $idJeu ?>">
                                 <section class="form-group" id="pseudoGroup">
                                     <label class="control-label" for="pseudo">Pseudo</label>
                                     <input type="text" class="form-control" id="pseudo" name="pseudo" placeholder="Votre pseudo" />
-                                    
+
                                     <span class="glyphicon glyphicon-remove form-control-feedback cacher" aria-hidden="true"></span>
                                     <span id="inputError2Status cacher" class="sr-only">(error)</span>
                                 </section>
                                 <section class="form-group" id="commentaireGroup">
                                     <label for="commentaire">Commentaire</label>
                                     <textarea class="form-control" rows="3" name="commentaire" id="commentaire" placeholder="Votre commentaire"></textarea>
-                                
+
                                     <span class="glyphicon glyphicon-remove form-control-feedback cacher" aria-hidden="true"></span>
                                     <span id="inputError2Status cacher" class="sr-only">(error)</span>
                                 </section>
-                                <button type="submit" class="btn btn-default" id="envoyer">Commenter</button>
+                                <button type="submit" name="commenter" class="btn btn-default" id="envoyer">Commenter</button>
                             </form>
                         </fieldset>
                     </section>
