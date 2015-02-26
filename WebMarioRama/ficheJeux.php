@@ -48,7 +48,7 @@ if (isset($_POST['commenter'])) {
     $commentaire = trim(strip_tags($_POST['commentaire']));
 
     if (!empty($pseudo) && !empty($commentaire)) {
-        $date = date('d-m-y');
+        $date = date('d-m-y / h:m:s');
         addCommentaire($idJeu, $commentaire, $pseudo, $date);
         $success = true;
     } else {
