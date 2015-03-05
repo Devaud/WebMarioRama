@@ -13,6 +13,8 @@ ManageNavigation();
 if (isset($_GET['console'])) {
     $idConsole = $_GET['console'];
     $console = getConsole($idConsole);
+	$originalDate = $console['DateConsole'];
+    $console['DateConsole'] = date("d-m-Y", strtotime($originalDate));
 }
 ?>
 <html>

@@ -400,7 +400,7 @@ function displayCommentaire($idJeu) {
         foreach ($array as $comms) {
             $text .= '<article class="col-sm-12 marg">';
             $text .= '<section class = "col-sm-6 commsPseudo">' . $comms['Pseudo'] . '</section>';
-            $text .= '<section class = "col-sm-6 commsDate">' . $comms['DatePublication'] . '</section>';
+            $text .= '<section class = "col-sm-6 commsDate">' . $comms['DatePublication']= date("d-m-Y", strtotime($comms['DatePublication'])) . '</section>';
             $text .= '<section class = "col-sm-12 comms"><p>' . $comms['Commentaire'] . '</p></section>';
             $text .= '</article>';
         }

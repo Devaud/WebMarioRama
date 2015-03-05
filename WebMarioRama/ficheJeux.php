@@ -20,7 +20,8 @@ if (isset($_GET['id'])) {
     $pochette = $jeu['ImgJeu'];
     $nomJeux = $jeu['NomJeu'];
     $descr = $jeu['Descriptif'];
-    $date = $jeu['DateJeu'];
+    $originalDate = $jeu['DateJeu'];
+    $Date = date("d-m-Y", strtotime($originalDate));
     $video = $jeu['Video'];
     $videoNULL = false;
 
