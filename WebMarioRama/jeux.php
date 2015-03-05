@@ -15,12 +15,14 @@ ManageNavigation();
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./css/Normalize.css" />
         <link rel="shortcut icon" type="image/png-icon" href="./Media/MarioHTML5.png" />
-              <!-- Fichier pour bootstrap -->
-              <link rel="stylesheet" href="./css/bootstrap.min.css">
-        <link rel="stylesheet" href="./css/bootstrap-theme.min.css">
+        <!-- Fichier pour bootstrap -->
+        <link rel="stylesheet" href="./css/bootstrap.min.css">
+        <link rel="stylesheet" href="./css/bootstrap-theme.min.css" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="./js/bootstrap.min.js"></script>
         <script src="./js/music.js" ></script>
+
+
 
         <!-- Fichier créer par nous -->
         <link rel="stylesheet" href="./css/style.css">
@@ -42,6 +44,7 @@ ManageNavigation();
                         <h3 class="panel-title">Liste des jeux par tranche de 10 ans</h3>
                     </section>
                     <section class="panel-group panel panel-default" id="accordion" role="tablist" aria-multiselectable="true">
+
                         <!-- ----------------- 1981 - 1991 ------------------ -->
                         <section class="panel-heading" role="tab" id="headingOne">
                             <h4 class="panel-title">
