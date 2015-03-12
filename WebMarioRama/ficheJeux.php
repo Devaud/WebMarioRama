@@ -21,7 +21,7 @@ if (isset($_GET['id'])) {
     $nomJeux = $jeu['NomJeu'];
     $descr = $jeu['Descriptif'];
     $originalDate = $jeu['DateJeu'];
-    $Date = date("d-m-Y", strtotime($originalDate));
+    $date = date("d-m-Y", strtotime($originalDate));
     $video = $jeu['Video'];
     $videoNULL = false;
 
