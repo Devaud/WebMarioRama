@@ -42,6 +42,7 @@ ManageNavigation();
                     <section class="panel-body">
                         <h1 align='center'>
                             Introduction
+
                         </h1>
                         <p>
                             Bienvenu Chers joueuses, Chers joueurs et fans de la série de jeux Mario !
@@ -63,6 +64,7 @@ ManageNavigation();
                     </section>
                 </article>
             </section>
+
             <!-- ----------------------- Fin Contenu ----------------------- -->
 
             <!-- ----------------------- Pied de page ---------------------- -->

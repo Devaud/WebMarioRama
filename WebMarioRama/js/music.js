@@ -16,6 +16,4 @@ function mute() {
         volume.className = "glyphicon glyphicon-volume-up";
     }
 
-
-
 }
