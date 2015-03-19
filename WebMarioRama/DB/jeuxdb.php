@@ -148,3 +148,27 @@ function rechercheJeu($motclef) {
     
     return $st;
 }
+
+function supprimerConcerner($id){
+    $bdd = connect();
+    $sql = 'DELETE FROM concerne WHERE idJeu=:id';
+    prepareExecute($sql, $bdd, array('id' => $id));
+}
+
+function supprimerTypes($id){
+    $bdd = connect();
+    $sql = 'DELETE FROM etre WHERE idJeu=:id';
+    prepareExecute($sql, $bdd, array('id' => $id));
+}
+
+function supprimerCommentaires($id){
+    $bdd = connect();
+    $sql = 'DELETE FROM commentaires WHERE idJeu=:id';
+    prepareExecute($sql, $bdd, array('id' => $id));
+}
+
+function supprimerJeu($id){
+    $bdd = connect();
+    $sql = 'DELETE FROM jeux WHERE idJeu=:id';
+    prepareExecute($sql, $bdd, array('id' => $id));
+}

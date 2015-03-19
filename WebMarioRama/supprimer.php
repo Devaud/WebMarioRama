@@ -6,7 +6,16 @@
  * and open the template in the editor.
  */
 
-if(isset($_GET['type']) && isset($_GET['id'])){
+include './Include.php';
+LoadFromSession();
+
+if(isset($_GET['type']) && isset($_GET['id']) && $connect){
+    $jeu = $_GET['id'];
+    supprimerCommentaires($jeu);
+    supprimerConcerner($jeu);
+    supprimerTypes($jeu);
+    supprimerJeu($jeu);
+    header('location: ./jeux.php?page=jeux');
     
 }else{
     header('location: ./index.php?page=home');
