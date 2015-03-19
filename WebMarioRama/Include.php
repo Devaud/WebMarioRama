@@ -400,7 +400,7 @@ function displayCommentaire($idJeu) {
         foreach ($array as $comms) {
             $text .= '<article class="col-sm-12 marg">';
             $text .= '<section class = "col-sm-6 commsPseudo">' . $comms['Pseudo'] . '</section>';
-            $text .= '<section class = "col-sm-6 commsDate">' . $comms['DatePublication']= date("d-m-Y", strtotime($comms['DatePublication'])) . '</section>';
+            $text .= '<section class = "col-sm-6 commsDate">' . $comms['DatePublication'] = date("d-m-Y", strtotime($comms['DatePublication'])) . '</section>';
             $text .= '<section class = "col-sm-12 comms"><p>' . $comms['Commentaire'] . '</p></section>';
             $text .= '</article>';
         }
@@ -413,4 +413,25 @@ function displayCommentaire($idJeu) {
 
 
     return $text;
+}
+
+/**
+ * (Code trouvé sur openclassroom)
+ * Fonction pour supprimer un dossier et tous ses éléments
+ * @param string $dir chemin du dossier
+ */
+function rrmdir($dir) {
+    if (is_dir($dir)) {
+        $objects = scandir($dir);
+        foreach ($objects as $object) {
+            if ($object != "." && $object != "..") {
+                if (filetype($dir . "/" . $object) == "dir")
+                    rmdir($dir . "/" . $object);
+                else
+                    unlink($dir . "/" . $object);
+            }
+        }
+        reset($objects);
+        rmdir($dir);
+    }
 }
