@@ -98,6 +98,11 @@ if (isset($_POST['commenter'])) {
                         <!-- ------------------ Pochette ------------------- -->
                         <section class="col-sm-4">
                             <img src="<?php echo $pochette; ?>" alt="<?php echo $nomJeux . ' pochette' ?>" class="img-responsive img-rounded"/>
+                            <center>
+                                <?php
+                                echo '<a href="./supprimer.php?page=suppr&type=jeu&id=' . $idJeu . '" onclick="return confirm(\'Voulez-vous vraiment supprimer ' . $nomJeux . ' ?\');" class="btn btn-danger">Supprimer</a>';
+                                ?>
+                            </center>
                         </section>
                         <!-- ---------------- Fin Pochette ----------------- -->
 
@@ -170,9 +175,9 @@ if (isset($_POST['commenter'])) {
                         </h3>
                     </section>
                     <?php
-                        if($success){
-                            echo displaySuccess(' Commentaire ajouté avec succes');
-                        }
+                    if ($success) {
+                        echo displaySuccess(' Commentaire ajouté avec succes');
+                    }
                     ?>
 
                     <section class="panel-body">
