@@ -126,11 +126,25 @@ function getIdJeu($nom) {
  * @param string $nom nom du jeu
  * @return bool vrai, faux selon l'existance du jeu
  */
-function existJeu($nom){
+function existJeu($nom) {
     $bdd = connect();
     $sql = 'SELECT NomJeu FROM jeux WHERE NomJeu=:jeu';
 
     $st = prepareExecute($sql, $bdd, array('jeu' => $nom))->Fetch();
 
     return (!empty($st)) ? true : false;
+}
+
+/**
+ * Recherche un jeu dans la base de donnée par rapport à un mot clé
+ * @param string $motclef mot clé
+ * @return array donnée trouvée
+ */
+function rechercheJeu($motclef) {
+    $bdd = connect();
+    $sql = 'SELECT NomJeu FROM jeux WHERE NomJeu LIKE :motclef';
+
+    $st = prepareExecute($sql, $bdd, array("motclef" => $motclef . "%"))->FetchAll();
+    
+    return $st;
 }

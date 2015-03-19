@@ -21,6 +21,7 @@ ManageNavigation();
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="./js/bootstrap.min.js"></script>
         <script src="./js/music.js" ></script>
+        <script src="./js/search.js"></script>
 
 
 
@@ -38,7 +39,7 @@ ManageNavigation();
             <!-- ------------------------- Fin Menu ------------------------ -->
 
             <!-- -------------------------- Contenu ------------------------ -->
-            <section class="col-sm-12">
+            <section class="col-sm-8">
                 <section class="panel panel-default">
                     <section class="panel-heading">
                         <h3 class="panel-title">Liste des jeux par tranche de 10 ans</h3>
@@ -104,6 +105,19 @@ ManageNavigation();
                             </ul>
                         </section>
                         <!-- --------------------- Fin --------------------- -->
+                    </section>
+                </section>
+            </section>
+            
+            <section class="col-sm-4">
+                <section class="panel panel-default">
+                    <section class="panel-heading">
+                        <h3 class="panel-title">Rechercher un jeu</h3>
+                    </section>
+                    
+                    <section class="panel-body">
+                        <input type="text" name="recherche" id="recherche" class="form-control"/>
+                        <span id="resultat"></span>
                     </section>
                 </section>
             </section>
