@@ -14,15 +14,15 @@ if (isset($_GET["motclef"])) {
     $result = rechercheJeu($motclef);
 
     $text = '';
-
     if (!empty($result)) {
         foreach ($result as $mot) {
-            $text .= $mot["NomJeu"];
+
+            $text .= '<a href="./ficheJeux.php?page=figheJeu&id=' . $mot['idJeu'] . '" class="list-group-item">' . $mot["NomJeu"] . '</a>';
         }
     } else {
-        $text = "Aucun résultat pour " . $motclef;
+        $text = '<a class="list-group-item list-group-item-danger">Aucun résultat pour ' . $motclef . '</a>';
     }
-    
+
     echo $text;
 }
 

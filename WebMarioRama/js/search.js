@@ -5,10 +5,12 @@
  */
 
 $(document).ready(function () {
+    // quand une touche est relachée sur l'input recherche
     $("#recherche").keyup(function () {
-        var recherche = $(this).val();
+        var recherche = $(this).val(); // Récupère le mot clé
         var data = 'motclef=' + recherche;
-        if (recherche.length > 3) {
+        if (recherche.length > 1) {
+            // Fonction ajax
             $.ajax({
                 type: "GET",
                 url: "result.php",

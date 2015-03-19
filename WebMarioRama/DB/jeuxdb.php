@@ -142,7 +142,7 @@ function existJeu($nom) {
  */
 function rechercheJeu($motclef) {
     $bdd = connect();
-    $sql = 'SELECT NomJeu FROM jeux WHERE NomJeu LIKE :motclef';
+    $sql = 'SELECT idJeu, NomJeu FROM jeux WHERE NomJeu LIKE :motclef';
 
     $st = prepareExecute($sql, $bdd, array("motclef" => $motclef . "%"))->FetchAll();
     

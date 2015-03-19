@@ -117,7 +117,9 @@ ManageNavigation();
                     
                     <section class="panel-body">
                         <input type="text" name="recherche" id="recherche" class="form-control"/>
-                        <span id="resultat"></span>
+                        <section class="list-group" id="resultat">
+                                
+                        </section>
                     </section>
                 </section>
             </section>
